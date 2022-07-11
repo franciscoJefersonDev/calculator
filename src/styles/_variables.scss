@@ -1,0 +1,74 @@
+$text-light: $black;
+$text-dark: $white;
+$bg-light: rgb(255, 255, 255);
+$bg-dark: rgb(40, 40, 40);
+$bg-card-dark: rgb(50, 50, 50);
+$bg-card-light: rgb(245, 245, 245);
+$bg-navbar-dark: rgb(60, 60, 60);
+$bg-navbar-light: rgb(235, 235, 235);
+$primary: rgb(153,  80, 173);
+$border: 0.1em solid rgba(0, 0, 0, 0.2);
+$active-bg: $primary;
+$active-circle: rgb(255, 255, 255);
+$unactive-bg: rgb(150, 150, 150);
+$unactive-circle: rgb(200, 200, 200);
+// typography
+$fs-body: 1.2em;
+$text-h1: 1.8em;
+$text-h2: 1.6em;
+$text-h3: 1.4em;
+$text-h4: 1.2em;
+$text-h5: 1em;
+$text-h6: 0.8em;
+$icon-color: #000000;
+@mixin theme-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $bg-light;
+    color: $text-light;
+    --ripple-color: rgba(0, 0, 0, 0.1);
+    & #app {
+      background-color: $bg-light;
+      & ion-icon {
+        color: $text-light;
+      }
+      & .card {
+        background-color: $bg-card-light;
+      }
+      & input {
+        color: $text-light;
+      }
+      & .dropstart .dropdown-menu {
+        background-color: $bg-card-light;
+        color: $text-light;
+      }
+      & .navbar {
+        background-color: $bg-navbar-light;
+        color: $text-light;
+      }
+    }
+  } @else {
+    background-color: $bg-dark;
+    color: $text-dark;
+     --ripple-color: rgba(255, 255, 255, 0.1);
+    & #app {
+      background-color: $bg-dark;
+      & ion-icon {
+        color: $text-dark;
+      }
+      & .card {
+        background-color: $bg-card-dark;
+      }
+      & input {
+        color: $text-dark;
+      }
+      & .dropstart .dropdown-menu {
+        background-color: $bg-card-dark;
+        color: $text-dark;
+      }
+      & .navbar {
+        background-color: $bg-navbar-dark;
+        color: $text-dark;
+      }
+    }
+  }
+}

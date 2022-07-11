@@ -1,5 +1,7 @@
 import "./style.scss";
-import Ripples from "./Ripples";
+import 'bootstrap';
+import Dropdown from './components/Dropdown'
+import Ripples from "./components/Ripples";
 // COMPONENTS
 import outputInput from "./components/outputInput";
 import history from "./components/history";
@@ -29,6 +31,7 @@ const init = ({ localStorageConfig, switchToggleTheme }: InitData) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  const dropdowns: any = document.querySelectorAll<HTMLDivElement>('.dropdown')
   const liToggleTheme = document.querySelector<HTMLLIElement>(
     ".switch-toggle-theme"
   )!;
@@ -38,15 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const liToggleFullscreen = document.querySelector<HTMLLIElement>(
     ".toggle-fullscreen"
   )!;
-  const ripplesElements = document.querySelectorAll<HTMLElement>(".ripples")!;
+  const ripplesElements: any = document.querySelectorAll<HTMLElement>(".ripples")!;
   const localStorageConfig: any = JSON.parse(
     localStorage.getItem("config") || `{"darkMode": false}`
   );
 
   init({ localStorageConfig, switchToggleTheme });
+  new Dropdown(dropdowns)
   new Ripples(ripplesElements);
 
-  liToggleTheme.addEventListener("click", (event: any) => {
+  liToggleTheme.addEventListener("click", () => {
     if (switchToggleTheme.checked) {
       switchToggleTheme.checked = false;
       localStorageConfig.darkMode = false;
@@ -57,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("config", JSON.stringify(localStorageConfig));
     init({ localStorageConfig, switchToggleTheme });
   });
-  liToggleFullscreen.addEventListener("click", (event: any) => {
+  liToggleFullscreen.addEventListener("click", () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
     } else {

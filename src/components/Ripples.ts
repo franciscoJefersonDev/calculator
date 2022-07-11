@@ -24,7 +24,7 @@ export default class {
     this.els = elements;
     this.elementData = {
       size: 0,
-      color: "",
+      color: '',
       transition: 200,
       halfWidth: 0,
       halfHeight: 0,
@@ -39,17 +39,17 @@ export default class {
       element.addEventListener("pointerdown", (event: any) => {
         this.start(event);
       });
-      element.addEventListener("mouseup", () => {
-        this.end();
+      element.addEventListener("mouseup", (event: any) => {
+        this.end(event.target);
       });
-      element.addEventListener("touchend", () => {
-        this.end();
+      element.addEventListener("touchend", (event: any) => {
+        this.end(event.tagret);
       });
     });
   }
   start(event: any) {
     this.setElementSize(event.target);
-    this.setColorAndTransition(event.target);
+    this.setColorAndTransition(event.target)
     this.elementData.halfWidth = event.target.offsetWidth / 2;
     this.elementData.halfHeight = event.target.offsetHeight / 2;
     this.rippleTimeout = setTimeout(() => {
@@ -74,18 +74,14 @@ export default class {
       Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)) / 4;
   }
   setColorAndTransition(element: HTMLElement) {
-    this.elementData.color = window
-      .getComputedStyle(element)
-      .getPropertyValue("--rp-color");
-    this.elementData.transition = Number(
-      window.getComputedStyle(element).getPropertyValue("--rp-transition")
-    );
+    this.elementData.color = window.getComputedStyle(element).getPropertyValue('--rp-color')
+    this.elementData.transition = Number(window.getComputedStyle(element).getPropertyValue('--rp-transition'))
   }
   create(event: any) {
     const span: HTMLSpanElement = document.createElement("span");
     span.classList.add("ripple");
     event.target.appendChild(span);
-    this.setTouchData(event);
+    this.setTouchData(event)
     span.style.top = `${
       this.elementData.touchData.top - this.elementData.size / 2
     }px`;
@@ -154,8 +150,8 @@ export default class {
       ? this.getFormula().d
       : this.getFormula().d;
   }
-  end() {
-    const span = document.querySelectorAll<HTMLSpanElement>(".ripple");
+  end(element: HTMLElement) {
+    const span = element.querySelectorAll<HTMLSpanElement>(".ripple");
     span.forEach((ripple) => {
       if (this.rippleEnd) {
         ripple.style.opacity = "0";

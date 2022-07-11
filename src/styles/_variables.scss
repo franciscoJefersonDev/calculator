@@ -13,7 +13,7 @@ $active-circle: rgb(255, 255, 255);
 $unactive-bg: rgb(150, 150, 150);
 $unactive-circle: rgb(200, 200, 200);
 // typography
-$fs-body: 1.2em;
+$fs-body: 1.1em;
 $text-h1: 1.8em;
 $text-h2: 1.6em;
 $text-h3: 1.4em;
@@ -37,8 +37,8 @@ $icon-color: #000000;
       & input {
         color: $text-light;
       }
-      & .dropstart .dropdown-menu {
-        background-color: $bg-card-light;
+      & .dropdown .dropdown__menu {
+        background-color: $bg-navbar-light;
         color: $text-light;
       }
       & .navbar {
@@ -61,8 +61,8 @@ $icon-color: #000000;
       & input {
         color: $text-dark;
       }
-      & .dropstart .dropdown-menu {
-        background-color: $bg-card-dark;
+      & .dropdown .dropdown__menu {
+        background-color: $bg-navbar-dark;
         color: $text-dark;
       }
       & .navbar {

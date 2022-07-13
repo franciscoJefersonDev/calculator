@@ -4,8 +4,8 @@ specifiers:
   '@popperjs/core': ^2.11.5
   '@types/bootstrap': ^5.1.12
   bootstrap: 5.2.0-beta1
-  random-hash: ^4.0.1
   sass: 1.53.0
+  swiper: ^8.3.1
   typescript: ^4.5.4
   vite: ^2.9.9
 
@@ -13,9 +13,9 @@ dependencies:
   '@popperjs/core': 2.11.5
   '@types/bootstrap': 5.1.12
   bootstrap: 5.2.0-beta1_@popperjs+core@2.11.5
+  swiper: 8.3.1
 
 devDependencies:
-  random-hash: 4.0.1
   sass: 1.53.0
   typescript: 4.7.4
   vite: 2.9.14_sass@1.53.0
@@ -74,6 +74,12 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /dom7/4.0.4:
+    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /esbuild-android-64/0.14.49:
     resolution: {integrity: sha512-vYsdOTD+yi+kquhBiFWl3tyxnj2qZJsl4tAqwhT90ktUdnyTizgle7TjNx6Ar1bN7wcwWqZ9QInfdk2WVagSww==}
@@ -383,10 +389,6 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /random-hash/4.0.1:
-    resolution: {integrity: sha512-DXtQo3p1jWF3Wj+1OKZzZrQRdOEIcMkpM9GeYAWXCYf0k36OEQSFkWOsaqVQ37ltQgJuzjP9Mzey3DUIuuI2wA==}
-    dev: true
-
   /readdirp/3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
@@ -426,10 +428,23 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swiper/8.3.1:
+    resolution: {integrity: sha512-oASYsulsERlbQVTZ8FjlTDJSN4YZwhp+AkvepOj8EOhgpvxzKoMpWpBPrk7ypkMioQUx6x2NPvkRU0Qv9mpS0A==}
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: 4.0.4
+      ssr-window: 4.0.2
+    dev: false
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}

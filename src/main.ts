@@ -1,8 +1,11 @@
+import 'swiper/css';
+import 'swiper/css/pagination';
 import "./style.scss";
 import 'bootstrap';
 import './components/Dropdown'
 import "./components/Ripples";
-// COMPONENTS
+import Swiper, { Pagination } from "swiper";
+
 import outputInput from "./components/outputInput";
 import history from "./components/history";
 import controls from "./components/controls";
@@ -19,6 +22,19 @@ app.innerHTML = `
   ${history}
   ${controls}
 `;
+
+new Swiper(".mySwiper", {
+  direction: "vertical",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  },
+  modules: [Pagination],
+});
+
 
 window.addEventListener("orientationchange", (event: any) => {
   const angle: number = event.target.screen.orientation.angle

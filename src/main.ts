@@ -1,7 +1,7 @@
 import "./style.scss";
 import 'bootstrap';
-import Dropdown from './components/Dropdown'
-import Ripples from "./components/Ripples";
+import './components/Dropdown'
+import "./components/Ripples";
 // COMPONENTS
 import outputInput from "./components/outputInput";
 import history from "./components/history";
@@ -20,6 +20,18 @@ app.innerHTML = `
   ${controls}
 `;
 
+window.addEventListener("orientationchange", (event: any) => {
+  const angle: number = event.target.screen.orientation.angle
+  if(angle === 0) {
+    document.querySelector<HTMLDivElement>('.controls')?.classList.remove('none')
+    document.querySelector<HTMLDivElement>('.history')?.classList.add('none')
+  } else {
+    document.querySelector<HTMLDivElement>('.controls')?.classList.remove('none')
+    document.querySelector<HTMLDivElement>('.history')?.classList.remove('none')
+  }
+})
+
+
 const init = ({ localStorageConfig, switchToggleTheme }: InitData) => {
   if (localStorageConfig.darkMode) {
     document.body.classList.add("dark-mode");
@@ -31,7 +43,6 @@ const init = ({ localStorageConfig, switchToggleTheme }: InitData) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const dropdowns: any = document.querySelectorAll<HTMLDivElement>('.dropdown')
   const liToggleTheme = document.querySelector<HTMLLIElement>(
     ".switch-toggle-theme"
   )!;
@@ -41,14 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const liToggleFullscreen = document.querySelector<HTMLLIElement>(
     ".toggle-fullscreen"
   )!;
-  const ripplesElements: any = document.querySelectorAll<HTMLElement>(".ripples")!;
+  const toggleHistory = document.querySelectorAll<HTMLButtonElement>('.toggle-history')!
+  
   const localStorageConfig: any = JSON.parse(
     localStorage.getItem("config") || `{"darkMode": false}`
   );
 
   init({ localStorageConfig, switchToggleTheme });
-  new Dropdown(dropdowns)
-  new Ripples(ripplesElements);
 
   liToggleTheme.addEventListener("click", () => {
     if (switchToggleTheme.checked) {
@@ -70,4 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+  toggleHistory.forEach((item: HTMLButtonElement) => {
+    item.addEventListener('click', () => {
+      setTimeout(() => {
+        document.querySelector<HTMLDivElement>('.controls')?.classList.toggle('none')
+        document.querySelector<HTMLDivElement>('.history')?.classList.toggle('none')
+      }, 200)
+    })
+  })
+  
 });

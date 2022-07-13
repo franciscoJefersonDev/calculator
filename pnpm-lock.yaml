@@ -4,6 +4,7 @@ specifiers:
   '@popperjs/core': ^2.11.5
   '@types/bootstrap': ^5.1.12
   bootstrap: 5.2.0-beta1
+  random-hash: ^4.0.1
   sass: 1.53.0
   typescript: ^4.5.4
   vite: ^2.9.9
@@ -14,6 +15,7 @@ dependencies:
   bootstrap: 5.2.0-beta1_@popperjs+core@2.11.5
 
 devDependencies:
+  random-hash: 4.0.1
   sass: 1.53.0
   typescript: 4.7.4
   vite: 2.9.14_sass@1.53.0
@@ -379,6 +381,10 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /random-hash/4.0.1:
+    resolution: {integrity: sha512-DXtQo3p1jWF3Wj+1OKZzZrQRdOEIcMkpM9GeYAWXCYf0k36OEQSFkWOsaqVQ37ltQgJuzjP9Mzey3DUIuuI2wA==}
     dev: true
 
   /readdirp/3.6.0:

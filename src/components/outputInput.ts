@@ -7,7 +7,6 @@ export default `<div class="card output-input p-0">
     </button>
     <ul 
       class="dropdown__menu px-2 py-3 shadow"
-      aria-labelledby="dropdownMenuButtonOptions"
     >
       <h6 class="dropdown-header text-h6 m-0 px-1 py-1">Theme</h6>
       <li class="justify-content-start px-1 fs-body switch-toggle-theme dark-mode ripples">

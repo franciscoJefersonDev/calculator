@@ -1,4 +1,4 @@
-export default `
+const component = `
 <div class="card controls p-0">
   <div class="card-body p-0">
     <nav class="navbar px-1 py-0">
@@ -27,4 +27,8 @@ export default `
     </div>
   </div>
 </div>
-`;
+`
+export default (() => {
+  const app = document.querySelector<HTMLDivElement>('#app')!
+  app.innerHTML += component
+})()

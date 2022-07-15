@@ -1,4 +1,4 @@
-export default `
+const component = `
 <div class="card history p-0">
   <div class="card-body p-0">
     <nav class="navbar px-1 py-0">
@@ -21,4 +21,24 @@ export default `
       </div>
     </nav>
   </div>
-</div>`;
+</div>
+`
+export default (() => {
+  const app = document.querySelector<HTMLDivElement>('#app')!
+  app.innerHTML += component
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleHistory = document.querySelectorAll<HTMLButtonElement>('.toggle-history')!
+    toggleHistory.forEach((item: HTMLButtonElement) => {
+      item.addEventListener('click', () => {
+        setTimeout(() => {
+          document
+            .querySelector<HTMLDivElement>('.controls')
+            ?.classList.toggle('none')
+          document
+            .querySelector<HTMLDivElement>('.history')
+            ?.classList.toggle('none')
+        }, 200)
+      })
+    })
+  })
+})()

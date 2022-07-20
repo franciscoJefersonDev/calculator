@@ -1,0 +1,57 @@
+.output-input {
+  display: flex;
+  justify-content: flex-end;
+  @media (orientation: landscape) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  & .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    & .navbar {
+      & .dropdown {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+      }
+    }
+    & .content {
+      width: 100%;
+      height: calc(100% - 45px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      overflow-y: auto;
+      input[type="text"] {
+        height: 50%;
+        width: 100%;
+        outline: none;
+        display: flex;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        text-align: end;
+        user-select: auto;
+        -moz-user-select: auto;
+        -webkit-user-select: auto;
+        -ms-user-select: auto;
+        &#input-result {
+          @media (max-height: 400px) {
+            display: none;
+          }
+        }
+        &#input-expression {
+          @media (max-height: 400px) {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

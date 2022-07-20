@@ -2,10 +2,6 @@ $text-light: $black;
 $text-dark: $white;
 $bg-light: rgb(255, 255, 255);
 $bg-dark: rgb(40, 40, 40);
-$bg-card-dark: rgb(50, 50, 50);
-$bg-card-light: rgb(245, 245, 245);
-$bg-navbar-dark: rgb(60, 60, 60);
-$bg-navbar-light: rgb(235, 235, 235);
 $primary: rgb(153,  80, 173);
 $border: 0.1em solid rgba(0, 0, 0, 0.2);
 $active-bg: $primary;
@@ -21,60 +17,33 @@ $text-h4: 1.2em;
 $text-h5: 1em;
 $text-h6: 0.8em;
 $icon-color: #000000;
+$border-radius: 1em;
 @mixin theme-colors($light-theme: true) {
   @if $light-theme {
     background-color: $bg-light;
     color: $text-light;
+    --bg-card: rgb(245, 245, 245);
+    --bg-dropdown: rgb(245, 245, 245);
+    --bg-navbar: rgb(235, 235, 235);
+    --text-color: rgb(0, 0, 0);
     --ripple-color: rgba(0, 0, 0, 0.1);
     & #app {
       background-color: $bg-light;
-      & ion-icon {
-        color: $text-light;
-      }
-      & .card {
-        background-color: $bg-card-light;
-        & .content .container-1 {
-          background-color: $bg-navbar-light;
-          color: $text-light;
-        }
-      }
       & input {
-        color: $text-light;
-      }
-      & .dropdown .dropdown__menu {
-        background-color: $bg-navbar-light;
-        color: $text-light;
-      }
-      & .navbar {
-        background-color: $bg-navbar-light;
         color: $text-light;
       }
     }
   } @else {
     background-color: $bg-dark;
     color: $text-dark;
+    --bg-card: rgb(50, 50, 50);
+    --bg-dropdown: rgb(50, 50, 50);
+    --bg-navbar: rgb(60, 60, 60);
+    --text-color: rgb(255, 255, 255);
      --ripple-color: rgba(255, 255, 255, 0.1);
     & #app {
       background-color: $bg-dark;
-      & ion-icon {
-        color: $text-dark;
-      }
-      & .card {
-        background-color: $bg-card-dark;
-        & .content .container-1 {
-          background-color: $bg-navbar-dark;
-          color: $text-dark;
-        }
-      }
       & input {
-        color: $text-dark;
-      }
-      & .dropdown .dropdown__menu {
-        background-color: $bg-navbar-dark;
-        color: $text-dark;
-      }
-      & .navbar {
-        background-color: $bg-navbar-dark;
         color: $text-dark;
       }
     }

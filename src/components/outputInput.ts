@@ -5,7 +5,11 @@ const component = `
     <nav class="navbar px-1 py-0 m-0">
       <div class="dropdown">
         <button class="dropdown__button ripples">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
+          <svg width="130" height="499" viewBox="0 0 130 499" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="65" cy="65.0192" rx="65" ry="65.0192" fill="var(--text-color)"/>
+            <ellipse cx="65" cy="249.5" rx="65" ry="65.0192" fill="var(--text-color)"/>
+            <path d="M130 433.981C130 469.89 100.899 499 65 499C29.1015 499 0 469.89 0 433.981C0 398.072 29.1015 368.961 65 368.961C100.899 368.961 130 398.072 130 433.981Z" fill="var(--text-color)"/>
+          </svg>
         </button>
         <ul class="dropdown__menu px-2 py-3 shadow">
           <h6 class="dropdown-header text-h6 m-0 px-1 py-1">

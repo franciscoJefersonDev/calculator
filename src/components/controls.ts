@@ -90,6 +90,18 @@ const component = `
           <path d="M58.9631 30L54.6576 67.4285L50.3521 104.857L46.0466 142.285V142.285C43.9991 160.085 54.9445 175.517 66.917 171.712V171.712M142.445 147.708L117.269 155.709M117.269 155.709L92.093 163.711L66.917 171.712M117.269 155.709L66.917 171.712" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+      <button class="toggle-scientific-calc ripples navbar__button">
+      <svg class="scientific-icon" width="327" height="440" viewBox="0 0 327 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M307 120V86.6667C307 49.8477 277.152 20 240.333 20V20H173.667H107C107 20 107 20 107 20C107 20 78.6495 20 54.1374 20C45.2969 20 36.8214 23.5119 30.5702 29.7631V29.7631C17.5527 42.7806 17.5528 63.8861 30.5702 76.9036L73.6667 120L140.333 186.667V186.667C158.743 205.076 158.743 234.924 140.333 253.333V253.333L107 286.667L73.6667 320L40.3333 353.333L30.5702 363.096C17.5527 376.114 17.5527 397.219 30.5702 410.237V410.237C36.8214 416.488 45.2999 420 54.1405 420H107H240.333V420C277.152 420 307 390.152 307 353.333V320" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+      </svg>
+      <svg class="calc-basic-icon" width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M105.714 120H191.429M105.714 120V20M105.714 120V220M105.714 120H20M191.429 320H105.714H20M334.286 420V320V220M248.571 320H420M248.571 120H334.286H420" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+      </svg>      
+      </button>
+      <button class="rad-deg ripples navbar__button">
+        <p class="fs-body text-rad">Rad</p>
+        <p class="fs-body text-deg">Deg</p>
+      </button>
     </nav>
     <div class="content">
       <div class="container-1">
@@ -123,6 +135,7 @@ const component = `
           ${container2.col2[3]}
           ${container2.col2[4]}
         </div>
+        <div class="container-sc"></div>
       </div>
     </div>
   </div>
@@ -132,4 +145,14 @@ const component = `
 export default (() => {
   const app = document.querySelector<HTMLDivElement>('#app')!
   app.innerHTML += component
+  const toggleScientificCalc = document.querySelector<HTMLButtonElement>('.toggle-scientific-calc')!
+  const radDeg = document.querySelector<HTMLButtonElement>('.rad-deg')!
+  toggleScientificCalc.addEventListener('click', ( { target }: any ) => {
+    const container1 = document.querySelector<HTMLDivElement>('.container-1')!
+    target.classList.toggle('scientific')
+    container1.classList.toggle('none')
+  })
+  radDeg.addEventListener('click', ( { target }: any ) => {
+    target.classList.toggle('deg')
+  })
 })()

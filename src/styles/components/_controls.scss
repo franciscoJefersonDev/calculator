@@ -10,6 +10,9 @@
     grid-column: 2;
   }
   & .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     &__button {
       justify-self: start;
       grid-row: 1;
@@ -25,11 +28,55 @@
       align-items: center;
       background-color: transparent;
       justify-content: center;
+      color: var(--text-color);
+      transition: color linear 200ms;
       --rp-color: var(--ripple-color);
       --rp-transition: 200;
+      & p {
+        width: max-content;
+        height: max-content;
+        pointer-events: none;
+        margin: auto;
+      }
       &.toggle-history {
         @media (orientation: landscape) {
           display: none;
+        }
+      }
+      &.toggle-scientific-calc {
+        & .scientific-icon {
+          display: flex;
+        }
+        & .calc-basic-icon {
+          display: none;
+        }
+        &.scientific {
+          & .scientific-icon {
+            display: none;
+          }
+          & .calc-basic-icon {
+            display: flex;
+          }
+        }
+      }
+      &.rad-deg {
+        width: max-content;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: $border-radius;
+        & .text-rad {
+          display: flex;
+        }
+        & .text-deg {
+          display: none;
+        }
+        &.deg {
+          & .text-rad {
+            display: none;
+          }
+          & .text-deg {
+          display: flex;
+          }
         }
       }
     }
@@ -46,6 +93,22 @@
       margin: auto;
       display: flex;
       justify-content: space-evenly;
+      transition: width linear 200ms;
+      &.none {
+        & + .container-2 {
+          width: 99%;
+          & .c-col {
+            width: 24%;
+          }
+          & .container-sc {
+            display: flex;
+          }
+        }
+        width: 0px;
+        & > .c-col {
+          display: none;
+        }
+      }
     }
     & .container-2 {
       width: 49%;
@@ -54,8 +117,13 @@
       display: flex;
       justify-content: space-evenly;
       background-color: var(--bg-navbar);
-      transition: background-color linear 200ms;
+      transition: background-color linear 200ms, width linear 200ms;
       border-radius: $border-radius;
+      & .container-sc {
+        display: none;
+        width: 49%;
+        height: 100%;
+      }
     }
     & .c-col {
       width: 49%;

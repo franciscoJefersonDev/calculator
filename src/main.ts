@@ -1,5 +1,5 @@
-// import 'swiper/css'
-// import 'swiper/css/pagination'
+import 'swiper/css'
+import 'swiper/css/pagination'
 import './style.scss'
 import './components/history'
 import './components/outputInput'
@@ -8,7 +8,7 @@ import './components/Dropdown'
 import './components/Ripples'
 import './components/ButtonAnimated'
 import Init from './Init'
-// import Swiper, { Pagination } from 'swiper'
+import Swiper, { Pagination } from 'swiper'
 document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('orientationchange', (event: any) => {
     const angle: number = event.target.screen.orientation.angle
@@ -35,23 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
   new Init({ localStorageConfig, switchToggleTheme })
 })
 
-// new Swiper('.mySwiper', {
-//   direction: 'vertical',
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//     renderBullet: function (index, className) {
-//       return '<span class="' + className + '">' + (index + 1) + '</span>'
-//     },
-//   },
-//   modules: [Pagination],
-// const init = ({ localStorageConfig, switchToggleTheme }: InitData) => {
-//   if (localStorageConfig.darkMode) {
-//     document.body.classList.add('dark-mode')
-//     switchToggleTheme.checked = true
-//   } else {
-//     document.body.classList.remove('dark-mode')
-//     switchToggleTheme.checked = false
-//   }
-// }
-// })
+new Swiper('.mySwiper', {
+  direction: 'vertical',
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + '</span>'
+    },
+  },
+  modules: [Pagination],
+})

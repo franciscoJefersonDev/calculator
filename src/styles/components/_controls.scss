@@ -95,8 +95,12 @@
       justify-content: space-evenly;
       transition: width linear 200ms;
       &.none {
+        width: 0%;
+        padding: 0;
+        margin: 0;
         & + .container-2 {
           width: 99%;
+          margin: auto;
           & .c-col {
             width: 24%;
           }
@@ -104,8 +108,7 @@
             display: flex;
           }
         }
-        width: 0px;
-        & > .c-col {
+        & .c-col {
           display: none;
         }
       }
@@ -123,6 +126,73 @@
         display: none;
         width: 49%;
         height: 100%;
+        position: relative;
+        & .swiper {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: transparent;
+          border-radius: $border-radius;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          & .swiper-wrapper {
+            width: calc(100% - 20px);
+            height: 100%;
+            & .swiper-slide {
+              width: 100%;
+              height: 100%;
+              border-radius: $border-radius;
+              background: transparent;
+              display: flex;
+              display: flex;
+              justify-content: space-evenly;
+              & .c-col {
+                width: 49%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+              }
+            }
+          }
+          & .swiper-pagination {
+            position: relative;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            margin: 0;
+            border-radius: $border-radius;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          & .swiper-pagination-bullet {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            background-color: var(--bg-card);
+            color: var(--text-color);
+            transition: background-color linear 200ms, color linear 200ms;
+          }
+          & .swiper-pagination-bullet-active {
+            color: rgb(255, 255, 255);
+            background: rgb(153,  80, 173);
+          }
+        }
       }
     }
     & .c-col {
@@ -167,5 +237,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes none {
+  0% {
+    width: 99%;
+  }
+  50% {
+    width: 0px;
+  }
+  100% {
+    display: none;
   }
 }

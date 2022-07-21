@@ -25,7 +25,6 @@ svg {
 
 
 body {
-  @include theme-colors($light-theme: true);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -37,6 +36,10 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   transition: background-color linear 200ms;
+  @media (max-height: 450px) {
+    height: 100vh;
+  }
+  @include theme-colors($light-theme: true);
   & #app {
     width: 100%;
     height: 100%;
@@ -57,74 +60,9 @@ body.dark-mode {
   @include theme-colors($light-theme: false);
 }
 
-.controls {
-  &.none {
-    display: none;
-  }
-  width: 100%; 
-  height: 100%;
-  grid-row: 2;
-  grid-column: 1;
-  display: flex;
-  border-radius: 1em;
-  border: none;
-  overflow: hidden;
-  & .navbar {
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-    width: 100%;
-    height: 45px;
-    display: grid;
-    grid-template-rows: 100%;
-    &__button {
-      justify-self: start;
-      grid-row: 1;
-      grid-column: 1;
-      border: none;
-      outline: none;
-      border-radius: 50%;
-      position: relative;
-      overflow: hidden;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      background-color: transparent;
-      justify-content: center;
-      --rp-color: var(--ripple-color);
-      --rp-transition: 200;
-    }
-  }
-  & .content {
-    width: 100%;
-    height: calc(100% - 45px);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    & .container-1 {
-      width: 70%;
-      height: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      & .c-col {
-        height: 100%;
-        width: 32%;
-        background-color: blue;
-      }
-    }
-  }
-}
-
 @media (orientation: landscape) {
   body #app {
     grid-template-columns: 29% 69%;
     column-gap: 2%;
-    & .controls {
-      grid-row: 2;
-      grid-column: 2;
-      & .navbar__button.toggle-history {
-        display: none;
-      }
-    }
   }
 }

@@ -42,12 +42,12 @@
         -webkit-user-select: auto;
         -ms-user-select: auto;
         &#input-result {
-          @media (max-height: 400px) {
+          @media (max-height: 450px) {
             display: none;
           }
         }
         &#input-expression {
-          @media (max-height: 400px) {
+          @media (max-height: 450px) {
             height: 100%;
           }
         }

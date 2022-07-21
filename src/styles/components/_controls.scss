@@ -1,0 +1,103 @@
+.controls {
+  grid-row: 2;
+  grid-column: 1;
+  display: flex;
+  &.none {
+    display: none;
+  }
+  @media (orientation: landscape) {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  & .navbar {
+    &__button {
+      justify-self: start;
+      grid-row: 1;
+      grid-column: 1;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      justify-content: center;
+      --rp-color: var(--ripple-color);
+      --rp-transition: 200;
+      &.toggle-history {
+        @media (orientation: landscape) {
+          display: none;
+        }
+      }
+    }
+  }
+  & .content {
+    width: 100%;
+    height: calc(100% - 45px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .container-1 {
+      width: 49%;
+      height: 99%;
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    & .container-2 {
+      width: 49%;
+      height: 99%;
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: var(--bg-navbar);
+      transition: background-color linear 200ms;
+      border-radius: $border-radius;
+    }
+    & .c-col {
+      width: 49%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      & .button {
+        width: 99%;
+        height: 19%;
+        border-radius: $border-radius;
+        outline: none;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-navbar);
+        color: var(--text-color);
+        --rp-color: var(--ripple-color);
+        --rp-transition: 200;
+        --box-shadow-default: none;
+        --border-radius-default: 1em;
+        --box-shadow-after: none;
+        --border-radius-after: 0.2em;
+        transition: background-color linear 200ms, color linear 200ms, border-radius linear 200ms;
+        &.c-2 {
+          background-color: var(--bg-card);
+          &.equals {
+            background-color: rgb(153,  80, 173);
+            --rp-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+        & p {
+          width: max-content;
+          height: max-content;
+          pointer-events: none;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

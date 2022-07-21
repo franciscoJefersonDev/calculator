@@ -6,6 +6,7 @@ import './components/outputInput'
 import './components/controls'
 import './components/Dropdown'
 import './components/Ripples'
+import './components/ButtonAnimated'
 import Init from './Init'
 // import Swiper, { Pagination } from 'swiper'
 document.addEventListener('DOMContentLoaded', () => {

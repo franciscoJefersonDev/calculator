@@ -1,5 +1,5 @@
-$text-light: $black;
-$text-dark: $white;
+$text-light: rgb(0, 0, 0);
+$text-dark: rgb(255, 255, 255);
 $bg-light: rgb(255, 255, 255);
 $bg-dark: rgb(40, 40, 40);
 $primary: rgb(153,  80, 173);
@@ -16,12 +16,13 @@ $text-h3: 1.4em;
 $text-h4: 1.2em;
 $text-h5: 1em;
 $text-h6: 0.8em;
+$text-primary: rgb(153,  80, 173);
 $icon-color: #000000;
 $border-radius: 1em;
 @mixin theme-colors($light-theme: true) {
   @if $light-theme {
     background-color: $bg-light;
-    color: $text-light;
+    color: $text-dark;
     --bg-card: rgb(245, 245, 245);
     --bg-dropdown: rgb(245, 245, 245);
     --bg-navbar: rgb(235, 235, 235);

@@ -29,6 +29,9 @@ const component = `
               </span>
             </label>
           </li>
+          <h6 class="dropdown-header text-h6 m-0 px-1 py-1">
+            Application
+          </h6>
           <li 
             class="
               toggle-fullscreen 

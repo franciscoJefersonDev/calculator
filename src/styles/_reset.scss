@@ -11,19 +11,6 @@
   -ms-user-select: none;
 }
 
-svg {
-  pointer-events: none;
-  width: 18px;
-  height: 18px;
-  & > * {
-    transition: fill linear 200ms, stroke linear 200ms;
-  }
-  & > g path {
-    transition: fill linear 200ms, stroke linear 200ms;
-  }
-}
-
-
 body {
   width: 100%;
   height: 100%;
@@ -36,10 +23,13 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   transition: background-color linear 200ms;
+  &.dark-mode {
+    @include theme-colors($light-theme: false);
+  }
+  @include theme-colors($light-theme: true);
   @media (max-height: 450px) {
     height: 100vh;
   }
-  @include theme-colors($light-theme: true);
   & #app {
     width: 100%;
     height: 100%;
@@ -50,19 +40,28 @@ body {
     align-items: center;
     justify-content: center;
     transition: background-color linear 200ms;
+    @media (orientation: landscape) {
+      grid-template-columns: 29% 69%;
+      column-gap: 2%;
+    }
     & input {
       transition: color linear 200ms;
     }
   }
 }
 
-body.dark-mode {
-  @include theme-colors($light-theme: false);
+sup {
+  pointer-events: none;
 }
 
-@media (orientation: landscape) {
-  body #app {
-    grid-template-columns: 29% 69%;
-    column-gap: 2%;
+svg {
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+  & > * {
+    transition: fill linear 200ms, stroke linear 200ms;
+  }
+  & > g path {
+    transition: fill linear 200ms, stroke linear 200ms;
   }
 }

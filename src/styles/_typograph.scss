@@ -34,7 +34,10 @@ body {
   font-weight: 600;
 }
 
-//colors 
+//colors
+.text-color {
+  color: var(--text-color);
+}
 .c-text-primary {
   color: $text-primary;
 }

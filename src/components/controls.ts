@@ -1,3 +1,6 @@
+import numbers from '../calculator/numbers';
+import { allClear, backspace, comma, equals, parentheses, percentage } from '../calculator/keys'
+import operators from '../calculator/operators';
 type Component = {
   col1: string[];
   col2: string[];
@@ -5,72 +8,139 @@ type Component = {
 
 const container1: Component = {
   col1: [
-    `<button class="button ripples button-animated"><p class="fs-body">8</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">6</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">4</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">2</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">0</p></button>`,
+    `<button
+      class="c-number button ripples button-animated"
+      data-value="8"
+    >
+      <p class="fs-body">8</p>
+    </button>`,
+    `<button
+      class="c-number button ripples button-animated"
+      data-value="6"
+    >
+      <p class="fs-body">6</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="4"
+    >
+      <p class="fs-body">4</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="2"
+    >
+      <p class="fs-body">2</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="0"
+    >
+      <p class="fs-body">0</p>
+    </button>`,
   ],
   col2: [
-    `<button class="button ripples button-animated"><p class="fs-body">9</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">7</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">5</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">3</p></button>`,
-    `<button class="button ripples button-animated"><p class="fs-body">1</p></button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="9"
+    >
+      <p class="fs-body">9</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="7"
+    >
+      <p class="fs-body">7</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="5"
+    >
+      <p class="fs-body">5</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="3"
+    >
+      <p class="fs-body">3</p>
+    </button>`,
+    `<button 
+      class="c-number button ripples button-animated"
+      data-value="1"
+    >
+      <p class="fs-body">1</p>
+    </button>`,
   ],
 }
 const container2: Component = {
   col1: [
-    `<button class="button c-2 ripples button-animated">
+    `<button class="c-backspace button c-2 ripples button-animated">
       <svg width="436" height="340" viewBox="0 0 436 340" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M125.994 26.6494L23.1729 169.415C18.9417 175.29 19.1829 183.275 23.7611 188.883L125.981 314.117C129.02 317.84 133.571 320 138.376 320H400C408.837 320 416 312.837 416 304V179.375V36C416 27.1634 408.837 20 400 20H138.977C133.832 20 129.001 22.4743 125.994 26.6494Z" stroke="var(--text-primary)" stroke-width="40"/>
         <path d="M236.502 120.503L286 170M286 170L335.497 120.503M286 170L335.497 219.497M286 170L236.502 219.497" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button class="c-parentheses button c-2 ripples button-animated">
       <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M165.455 20C-28.4847 20 -28.485 420 165.455 420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M274.545 20C468.485 20 468.485 420 274.545 420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-operator button c-2 ripples button-animated"
+      data-value="/"
+    >
       <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 220H420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M220 20C192.386 20 170 42.3858 170 70C170 97.6142 192.386 120 220 120C247.614 120 270 97.6142 270 70C270 42.3858 247.614 20 220 20Z" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M270 370C270 397.614 247.614 420 220 420C192.386 420 170 397.614 170 370C170 342.386 192.386 320 220 320C247.614 320 270 342.386 270 370Z" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-operator button c-2 ripples button-animated"
+      data-value="+"
+    >
       <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M220 20V220M220 420V220M220 220H20M220 220H420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated"><p class="fs-body">.</p></button>`,
+    `<button 
+      class="c-comma button c-2 ripples button-animated"
+      data-value="."
+    >
+      <p class="fs-body">.</p>
+    </button>`,
   ],
   col2: [
-    `<button class="button c-2 ripples button-animated">
+    `<button class="c-all-clear button c-2 ripples button-animated">
       <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M420 331.111V375.556V386.667C420 405.076 405.076 420 386.667 420V420H353.333H320H286.667V420C268.257 420 253.333 405.076 253.333 386.667V375.556V331.111V286.667V242.222V197.778V153.333V108.889V64.4444V53.3333C253.333 34.9238 268.257 20 286.667 20V20H320H353.333H386.667V20C405.076 20 420 34.9238 420 53.3333V64.4444V108.889M20 242.222V286.667V331.111V375.556V420V197.778M20 242.222V197.778M20 242.222H53.3333H86.6667H120H153.333M20 197.778V153.333V108.889V86.6667C20 72.242 24.6785 58.2064 33.3333 46.6667V46.6667C45.9236 29.8796 65.6829 20 86.6667 20V20V20C107.65 20 127.41 29.8796 140 46.6667V46.6667C148.655 58.2064 153.333 72.242 153.333 86.6667V108.889V153.333V197.778V242.222M153.333 242.222V286.667V331.111V375.556V420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>  
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button class="c-percentage button c-2 ripples button-animated">
       <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M360 40L40 360" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M280 360C302.091 382.091 337.909 382.091 360 360C382.091 337.909 382.091 302.091 360 280C337.909 257.909 302.091 257.909 280 280C257.909 302.091 257.909 337.909 280 360Z" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M40 120C17.9086 97.9086 17.9086 62.0914 40 40C62.0914 17.9086 97.9086 17.9086 120 40C142.091 62.0914 142.091 97.9086 120 120C97.9086 142.091 62.0914 142.091 40 120Z" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-operator button c-2 ripples button-animated"
+      data-value="*"
+    >
       <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 100L200 200M300 300L200 200M200 200L100 300M200 200L300 100" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-operator button c-2 ripples button-animated"
+      data-value="-"
+    >
       <svg width="440" height="40" viewBox="0 0 440 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 20H420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated equals">
+    `<button class="c-equals button c-2 ripples button-animated equals">
       <svg width="440" height="240" viewBox="0 0 440 240" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 20H420" stroke="rgb(255, 255, 255)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M20 220H420" stroke="rgb(255, 255, 255)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
@@ -299,6 +369,14 @@ export default (() => {
   app.innerHTML += component
   const toggleScientificCalc = document.querySelector<HTMLButtonElement>('.toggle-scientific-calc')!
   const radDeg = document.querySelector<HTMLButtonElement>('.rad-deg')!
+  const numbersButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-number')!
+  const backspaceButton = document.querySelector<HTMLButtonElement>('.c-backspace')!
+  const allClearButton = document.querySelector<HTMLButtonElement>('.c-all-clear')!
+  const commaButton = document.querySelector<HTMLButtonElement>('.c-comma')!
+  const parenthesesButton = document.querySelector<HTMLButtonElement>('.c-parentheses')!
+  const percentageButton = document.querySelector<HTMLButtonElement>('.c-percentage')!
+  const equalsButton = document.querySelector<HTMLButtonElement>('.c-equals')!
+  const operatorsButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-operator')!
   toggleScientificCalc.addEventListener('click', ( { target }: any ) => {
     const container1 = document.querySelector<HTMLDivElement>('.container-1')!
     target.classList.toggle('scientific')
@@ -307,4 +385,12 @@ export default (() => {
   radDeg.addEventListener('click', ( { target }: any ) => {
     target.classList.toggle('deg')
   })
+  backspaceButton.addEventListener('click', backspace)
+  allClearButton.addEventListener('click', allClear)
+  commaButton.addEventListener('click', comma)
+  parenthesesButton.addEventListener('click', parentheses)
+  percentageButton.addEventListener('click', percentage)
+  equalsButton.addEventListener('click', equals)
+  numbers(numbersButtons)
+  operators(operatorsButtons)
 })()

@@ -46,8 +46,8 @@ const component = `
       </div>
     </nav>
     <div class="content">
-      <input class="fs-1 m-0 px-1 py-0" id="input-expression" type="text" value="20+20" readonly>
-      <input class="fs-3 m-0 px-1 py-0" id="input-result" type="text" value="40" readonly>
+      <input class="fs-1 m-0 px-1 py-0 text-color expression-display input-expression" id="input-expression" type="text" readonly>
+      <input class="fs-3 m-0 px-1 py-0 text-color display-result" id="input-result" type="text" readonly>
     </div>
   </div>
 </div>

@@ -16,6 +16,7 @@
     "@popperjs/core": "^2.11.5",
     "@types/bootstrap": "^5.1.12",
     "bootstrap": "5.2.0-beta1",
+    "mathjs": "^11.0.0",
     "swiper": "^8.3.1"
   },
   "keywords": [],

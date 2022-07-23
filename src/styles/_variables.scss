@@ -31,9 +31,6 @@ $border-radius: 1em;
     --ripple-color: rgba(0, 0, 0, 0.1);
     & #app {
       background-color: $bg-light;
-      & input {
-        color: $text-light;
-      }
     }
   } @else {
     background-color: $bg-dark;
@@ -46,9 +43,6 @@ $border-radius: 1em;
     --ripple-color: rgba(255, 255, 255, 0.1);
     & #app {
       background-color: $bg-dark;
-      & input {
-        color: $text-dark;
-      }
     }
   }
 }

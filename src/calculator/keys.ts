@@ -3,6 +3,7 @@ import {
 } from './calculator'
 import format from './format'
 import calculateValue from './calculateValue'
+import loadHistory from './loadHistory'
 const operators_symbols = /\+|\-|\*|\//
 const parentheses = () => {
   const last_position = data.expression.length - 1
@@ -117,6 +118,16 @@ const comma = () => {
 
 const equals = () => {
   const inputExpression = document.querySelector<HTMLInputElement>('.input-expression')!
+  const localStorageHistory: any = JSON.parse(
+    localStorage.getItem('history') || `[{}]`
+  )
+  if(data.expression.length > 0 && data.expression[0] !== '') {
+    localStorageHistory.push({
+      expression: data.expression,
+      display: data.expression_display,
+    })
+    localStorage.setItem('history', JSON.stringify(localStorageHistory))
+  }
   if(Number(data.result) < 0) {
     data.expression_display = ['-', Math.abs(Number(data.result)).toString()]
     data.expression = ['-', Math.abs(Number(data.result)).toString()]
@@ -127,6 +138,6 @@ const equals = () => {
   data.result = ''
   format()
   inputExpression.classList.add('c-text-primary')
-  console.log(inputExpression)
+  loadHistory()
 }
 export { backspace, allClear, comma, parentheses, percentage, equals }

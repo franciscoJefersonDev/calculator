@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 body {
   font-family: 'Comfortaa', cursive;
+  & input, button, p, li, h6 {
+    font-family: 'Comfortaa', cursive;
+  }
 }
+
 .fs-body {
   font-size: $fs-body;
 }
@@ -30,6 +33,9 @@ body {
   font-weight: 900;
 }
 // font-weight
+.c-fw-400 {
+  font-weight: 400;
+}
 .c-fw-600 {
   font-weight: 600;
 }

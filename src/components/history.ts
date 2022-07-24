@@ -1,11 +1,13 @@
+import loadHistory from "../calculator/loadHistory"
+
 const component = `
-<div class="card history p-0 m-0">
-  <div class="card-body p-0">
-    <nav class="navbar px-1 py-0">
+<div class="card history">
+  <div class="card-body">
+    <nav class="navbar">
       <button class="toggle-history ripples navbar__button">
-        <svg width="452" height="326" viewBox="0 0 452 326" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26 26L76 101L126 176L176 251V251C199.786 286.679 252.214 286.679 276 251V251L326 176L376 101L426 26" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>      
+        <svg width="450" height="275" viewBox="0 0 450 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 25L75 87.5L125 150L175 212.5V212.5C200.633 244.542 249.367 244.542 275 212.5V212.5L325 150L375 87.5L425 25" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>     
       </button>
       <h3 class="m-0 p-0 text-h3">History</h3>
       <div class="dropdown">
@@ -17,7 +19,7 @@ const component = `
           </svg>
         </button>
         <ul 
-          class="dropdown__menu px-2 py-3 shadow"
+          class="dropdown__menu shadow"
         >
           <h6 class="dropdown-header text-h6 m-0 px-1 py-1">History</h6>
           <li class="justify-content-start px-1 py-0 m-0 fs-body ripples">
@@ -26,6 +28,7 @@ const component = `
         </ul>
       </div>
     </nav>
+    <div class="content"></div>
   </div>
 </div>
 `
@@ -46,5 +49,6 @@ export default (() => {
         }, 200)
       })
     })
+    loadHistory()
   })
 })()

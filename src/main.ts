@@ -10,6 +10,17 @@ import './components/ButtonAnimated'
 import Init from './Init'
 import Swiper, { Pagination } from 'swiper'
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.screen.orientation.angle === 0) {
+    document
+      .querySelector<HTMLDivElement>('.controls')
+      ?.classList.remove('none')
+    document.querySelector<HTMLDivElement>('.history')?.classList.add('none')
+  } else {
+    document
+      .querySelector<HTMLDivElement>('.controls')
+      ?.classList.remove('none')
+    document.querySelector<HTMLDivElement>('.history')?.classList.remove('none')
+  }
   window.addEventListener('orientationchange', (event: any) => {
     const angle: number = event.target.screen.orientation.angle
     if (angle === 0) {

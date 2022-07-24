@@ -30,6 +30,8 @@
       justify-content: center;
       color: var(--text-color);
       transition: color linear 200ms;
+      font-size: $fs-body;
+      cursor: pointer;
       --rp-color: var(--ripple-color);
       --rp-transition: 200;
       & p {
@@ -61,8 +63,8 @@
       }
       &.rad-deg {
         width: max-content;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         border-radius: $border-radius;
         & .text-rad {
           display: flex;
@@ -215,6 +217,9 @@
         justify-content: center;
         background-color: var(--bg-navbar);
         color: var(--text-color);
+        font-size: $fs-body;
+        font-weight: 400;
+        cursor: pointer;
         --rp-color: var(--ripple-color);
         --rp-transition: 200;
         --box-shadow-default: none;

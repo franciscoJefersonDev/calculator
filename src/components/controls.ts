@@ -128,8 +128,8 @@ const container2: Component = {
       class="c-operator button c-2 ripples button-animated"
       data-value="*"
     >
-      <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 100L200 200M300 300L200 200M200 200L100 300M200 200L300 100" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg width="450" height="450" viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M112.5 112.5L225 225M337.5 337.5L225 225M225 225L112.5 337.5M225 225L337.5 112.5" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>`,
     `<button 
@@ -156,16 +156,16 @@ const container3: Component = {
       </svg>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">sin</p>
+      <p class="fs-body c-text-primary c-fw-400">sin</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">tan</p>
+      <p class="fs-body c-text-primary c-fw-400">tan</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">ln</p>
+      <p class="fs-body c-text-primary c-fw-400">ln</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">x^<sup>2</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">x^<sup>2</sup></p>
     </button>`,
   ],
   col2: [
@@ -176,85 +176,83 @@ const container3: Component = {
       </svg>  
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">cos</p>
+      <p class="fs-body c-text-primary c-fw-400">cos</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">log</p>
+      <p class="fs-body c-text-primary c-fw-400">log</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">1/x</p>
+      <p class="fs-body c-text-primary c-fw-400">1/x</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">x^<sup>y</sup></p>    
+      <p class="fs-body c-text-primary c-fw-400">x^<sup>y</sup></p>    
     </button>`,
   ],
 }
 const container4: Component = {
   col1: [
     `<button class="button c-2 ripples button-animated">
-      <svg width="440" height="373" viewBox="0 0 440 373" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M86.6667 353V286.4V219.8V153.2V86.6V20M86.6667 20H153.333H220H286.667H353.333M86.6667 20H20M353.333 20H420M353.333 20V86.6V153.2V219.8V286.4V319.667C353.333 338.076 368.257 353 386.667 353V353H420" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>    
+      <p class="fs-body c-text-primary c-fw-400">π</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">sin<sup>-1</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">sin<sup>-1</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">tan<sup>-1</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">tan<sup>-1</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">2<sup>x</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">2<sup>x</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">|x|</p>
+      <p class="fs-body c-text-primary c-fw-400">|x|</p>
     </button>`,
   ],
   col2: [
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">e</p> 
+      <p class="fs-body c-text-primary c-fw-400">e</p> 
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">cos<sup>-1</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">cos<sup>-1</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-    <p class="fs-body c-text-primary c-fw-600">e<sup>x</sup></p>
+    <p class="fs-body c-text-primary c-fw-400">e<sup>x</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">x<sup>3</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">x<sup>3</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">x!</p>  
+      <p class="fs-body c-text-primary c-fw-400">x!</p>  
     </button>`,
   ],
 }
 const container5: Component = {
   col1: [
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">sinh</p>   
+      <p class="fs-body c-text-primary c-fw-400">sinh</p>   
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">tanh</p>
+      <p class="fs-body c-text-primary c-fw-400">tanh</p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">cosh<sup>-1</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">cosh<sup>-1</sup></p>
     </button>`,
   ],
   col2: [
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">cosh</p> 
+      <p class="fs-body c-text-primary c-fw-400">cosh</p> 
     </button>`,
     `<button class="button c-2 ripples button-animated">
-      <p class="fs-body c-text-primary c-fw-600">sinh<sup>-1</sup></p>
+      <p class="fs-body c-text-primary c-fw-400">sinh<sup>-1</sup></p>
     </button>`,
     `<button class="button c-2 ripples button-animated">
-    <p class="fs-body c-text-primary c-fw-600">tanh<sup>-1</sup></p>
+    <p class="fs-body c-text-primary c-fw-400">tanh<sup>-1</sup></p>
     </button>`,
   ],
 }
 const component = `
-<div class="card controls p-0">
-  <div class="card-body p-0">
-    <nav class="navbar px-1 py-0">
+<div class="card controls">
+  <div class="card-body">
+    <nav class="navbar">
       <button class="toggle-history ripples navbar__button">
         <svg width="425" height="455" viewBox="0 0 425 455" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M72.7497 337.137C92.6607 373.136 122.9 401.024 158.814 416.508C194.727 431.992 234.326 434.215 271.515 422.834C308.705 411.453 341.424 387.1 364.638 353.521C387.853 319.943 400.276 279 399.995 236.993C399.715 194.987 386.747 154.244 363.087 121.035C339.427 87.8265 306.386 63.9917 269.049 53.1989C231.712 42.406 192.147 45.2532 156.444 61.3022C120.74 77.3511 90.8764 105.713 71.4479 142.022" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round"/>
@@ -266,13 +264,18 @@ const component = `
       <svg class="scientific-icon" width="327" height="440" viewBox="0 0 327 440" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M307 120V86.6667C307 49.8477 277.152 20 240.333 20V20H173.667H107C107 20 107 20 107 20C107 20 78.6495 20 54.1374 20C45.2969 20 36.8214 23.5119 30.5702 29.7631V29.7631C17.5527 42.7806 17.5528 63.8861 30.5702 76.9036L73.6667 120L140.333 186.667V186.667C158.743 205.076 158.743 234.924 140.333 253.333V253.333L107 286.667L73.6667 320L40.3333 353.333L30.5702 363.096C17.5527 376.114 17.5527 397.219 30.5702 410.237V410.237C36.8214 416.488 45.2999 420 54.1405 420H107H240.333V420C277.152 420 307 390.152 307 353.333V320" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
       </svg>
-      <svg class="calc-basic-icon" width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M105.714 120H191.429M105.714 120V20M105.714 120V220M105.714 120H20M191.429 320H105.714H20M334.286 420V320V220M248.571 320H420M248.571 120H334.286H420" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
-      </svg>      
+      <svg class="calc-basic-icon" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M95.0691 20V59.3825V98.765M95.0691 98.765V138.147V177.53M95.0691 98.765H57.5345H20M95.0691 98.765H132.604H170.138" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+        <path d="M260.754 252.914L287.295 280.762L313.836 308.609M313.836 308.609L340.377 336.457L366.918 364.305M313.836 308.609L287.295 336.457L260.754 364.305M313.836 308.609L340.377 280.762L366.918 252.914" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+        <path d="M395.345 98.765H357.811H320.276H282.742H245.207" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+        <path d="M170.138 315.369H132.604H95.0691H57.5345H20" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+        <ellipse cx="95.069" cy="256.295" rx="18.7673" ry="19.6912" fill="var(--text-color)"/>
+        <ellipse cx="95.069" cy="374.442" rx="18.7673" ry="19.6912" fill="var(--text-color)"/>
+      </svg>   
       </button>
       <button class="rad-deg ripples navbar__button">
-        <p class="fs-body text-rad">Rad</p>
-        <p class="fs-body text-deg">Deg</p>
+        <p class="text-rad">Rad</p>
+        <p class="text-deg">Deg</p>
       </button>
     </nav>
     <div class="content">
@@ -390,7 +393,9 @@ export default (() => {
   commaButton.addEventListener('click', comma)
   parenthesesButton.addEventListener('click', parentheses)
   percentageButton.addEventListener('click', percentage)
-  equalsButton.addEventListener('click', equals)
+  equalsButton.addEventListener('click', () => {
+    equals()
+  })
   numbers(numbersButtons)
   operators(operatorsButtons)
 })()

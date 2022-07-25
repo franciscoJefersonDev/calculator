@@ -1,3 +1,4 @@
+import { expression } from "mathjs"
 import loadHistory from "../calculator/loadHistory"
 
 const component = `
@@ -22,7 +23,7 @@ const component = `
           class="dropdown__menu shadow"
         >
           <h6 class="dropdown-header text-h6 m-0 px-1 py-1">History</h6>
-          <li class="justify-content-start px-1 py-0 m-0 fs-body ripples">
+          <li class="clear-history justify-content-start px-1 py-0 m-0 fs-body ripples">
             Clear
           </li>
         </ul>
@@ -37,6 +38,7 @@ export default (() => {
   app.innerHTML += component
   document.addEventListener('DOMContentLoaded', () => {
     const toggleHistory = document.querySelectorAll<HTMLButtonElement>('.toggle-history')!
+    const clearHistory = document.querySelector<HTMLLIElement>('.clear-history')!
     toggleHistory.forEach((item: HTMLButtonElement) => {
       item.addEventListener('click', () => {
         setTimeout(() => {
@@ -48,6 +50,17 @@ export default (() => {
             ?.classList.toggle('none')
         }, 200)
       })
+    })
+    clearHistory.addEventListener('click', () => {
+      let localStorageHistory: any = JSON.parse(
+        localStorage.getItem('history') || `[{"expression": [], "display": []}]`
+      )
+      localStorageHistory = [{
+        expression: [],
+        display: [],
+      }]
+      localStorage.setItem('history', JSON.stringify(localStorageHistory))
+      loadHistory()
     })
     loadHistory()
   })

@@ -122,11 +122,14 @@ const equals = () => {
     localStorage.getItem('history') || `[{"expression": [], "display": []}]`
   )
   if(data.expression.length > 0 && data.expression[0] !== '') {
-    localStorageHistory.push({
+    const newHistory = {
       expression: data.expression,
       display: data.expression_display,
-    })
-    localStorage.setItem('history', JSON.stringify(localStorageHistory))
+    }
+    if(localStorageHistory.filter((item: any) => JSON.stringify(item) === JSON.stringify(newHistory)).length === 0) {
+      localStorageHistory.push(newHistory)
+      localStorage.setItem('history', JSON.stringify(localStorageHistory))
+    }
   }
   if(Number(data.result) < 0) {
     data.expression_display = ['-', Math.abs(Number(data.result)).toString()]

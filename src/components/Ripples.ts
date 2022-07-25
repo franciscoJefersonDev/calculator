@@ -182,3 +182,11 @@ export default document.addEventListener('DOMContentLoaded', () => {
   const ripplesElements: any = document.querySelectorAll<HTMLElement>(".ripples")!;
   new Ripples(ripplesElements);
 });
+
+const AddManual = (ripplesElements: HTMLElement[]) => {
+  new Ripples(ripplesElements);
+}
+
+export {
+  AddManual
+}

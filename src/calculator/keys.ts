@@ -119,7 +119,7 @@ const comma = () => {
 const equals = () => {
   const inputExpression = document.querySelector<HTMLInputElement>('.input-expression')!
   const localStorageHistory: any = JSON.parse(
-    localStorage.getItem('history') || `[{}]`
+    localStorage.getItem('history') || `[{"expression": [], "display": []}]`
   )
   if(data.expression.length > 0 && data.expression[0] !== '') {
     localStorageHistory.push({

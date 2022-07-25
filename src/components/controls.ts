@@ -1,6 +1,10 @@
+import { data } from '../calculator/calculator'
 import numbers from '../calculator/numbers';
 import { allClear, backspace, comma, equals, parentheses, percentage } from '../calculator/keys'
 import operators from '../calculator/operators';
+import scientific from '../calculator/scientific';
+import calculateValue from '../calculator/calculateValue';
+import format from '../calculator/format';
 type Component = {
   col1: string[];
   col2: string[];
@@ -150,101 +154,178 @@ const container2: Component = {
 }
 const container3: Component = {
   col1: [
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="sqrt"
+    >
       <svg width="440" height="340" viewBox="0 0 440 340" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M420 20H366.667H313.333H260V20C229.144 20 202.732 42.1307 197.332 72.51L157.589 296.061C155.127 309.911 143.086 320 129.019 320V320C112.992 320 100 307.008 100 290.981V223.333C100 193.878 76.1219 170 46.6667 170V170H20" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round"/>
       </svg>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="sin"
+    >
       <p class="fs-body c-text-primary c-fw-400">sin</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="tan"
+    >
       <p class="fs-body c-text-primary c-fw-400">tan</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="ln"
+    >
       <p class="fs-body c-text-primary c-fw-400">ln</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="x^2"
+    >
       <p class="fs-body c-text-primary c-fw-400">x^<sup>2</sup></p>
     </button>`,
   ],
   col2: [
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="cbrt"
+    >
       <svg width="440" height="362" viewBox="0 0 440 362" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M420 57H366.667H313.333H260V57C229.078 57 202.544 79.0293 196.856 109.423L157.783 318.22C155.203 332.007 143.167 342 129.14 342V342C113.047 342 100 328.953 100 312.86V252.833C100 223.378 76.1219 199.5 46.6667 199.5V199.5H20" stroke="var(--text-primary)" stroke-width="40" stroke-linecap="round"/>
         <path d="M76.8335 166.69C67.8183 166.69 59.7892 165.141 52.7461 162.042C45.7433 158.903 40.2094 154.596 36.1445 149.123C32.1199 143.609 30.0472 137.25 29.9265 130.046H56.2475C56.4085 133.065 57.3945 135.721 59.2056 138.015C61.057 140.269 63.512 142.019 66.5707 143.267C69.6294 144.515 73.0704 145.138 76.8938 145.138C80.8782 145.138 84.3998 144.434 87.4585 143.026C90.5172 141.617 92.9118 139.665 94.6424 137.17C96.373 134.674 97.2383 131.797 97.2383 128.537C97.2383 125.237 96.3126 122.319 94.4613 119.783C92.6502 117.208 90.0342 115.195 86.6133 113.746C83.2326 112.298 79.208 111.573 74.5394 111.573H63.0089V92.3757H74.5394C78.4836 92.3757 81.9649 91.6915 84.9833 90.3231C88.042 88.9548 90.4166 87.0632 92.1069 84.6484C93.7972 82.1934 94.6424 79.3359 94.6424 76.076C94.6424 72.977 93.8979 70.2604 92.4088 67.9261C90.9599 65.5516 88.9073 63.7003 86.2511 62.3722C83.6351 61.044 80.5764 60.38 77.0749 60.38C73.5333 60.38 70.2935 61.0239 67.3555 62.3118C64.4175 63.5594 62.0631 65.3504 60.2923 67.6847C58.5214 70.0189 57.5757 72.7557 57.4549 75.8949H32.4016C32.5224 68.7713 34.5548 62.4929 38.4989 57.0597C42.4431 51.6264 47.7556 47.3804 54.4364 44.3217C61.1576 41.2228 68.744 39.6733 77.1957 39.6733C85.7279 39.6733 93.1935 41.2228 99.5927 44.3217C105.992 47.4207 110.962 51.6063 114.504 56.8785C118.086 62.1106 119.857 67.9865 119.816 74.5064C119.857 81.4287 117.703 87.2041 113.357 91.8324C109.051 96.4607 103.436 99.3987 96.5139 100.646V101.612C105.61 102.779 112.532 105.939 117.281 111.09C122.07 116.201 124.445 122.601 124.404 130.288C124.445 137.331 122.412 143.589 118.307 149.062C114.242 154.536 108.628 158.842 101.464 161.982C94.3003 165.121 86.0901 166.69 76.8335 166.69Z" fill="var(--text-primary)"/>
       </svg>  
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="cos"
+    >
       <p class="fs-body c-text-primary c-fw-400">cos</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="log"
+    >
       <p class="fs-body c-text-primary c-fw-400">log</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="1/x">
       <p class="fs-body c-text-primary c-fw-400">1/x</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="x^y"
+    >
       <p class="fs-body c-text-primary c-fw-400">x^<sup>y</sup></p>    
     </button>`,
   ],
 }
 const container4: Component = {
   col1: [
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="pi"
+    >
       <p class="fs-body c-text-primary c-fw-400">π</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="asin"
+    >
       <p class="fs-body c-text-primary c-fw-400">sin<sup>-1</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="atan"
+    >
       <p class="fs-body c-text-primary c-fw-400">tan<sup>-1</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="2^x"
+    >
       <p class="fs-body c-text-primary c-fw-400">2<sup>x</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="abs"
+    >
       <p class="fs-body c-text-primary c-fw-400">|x|</p>
     </button>`,
   ],
   col2: [
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="e"
+    >
       <p class="fs-body c-text-primary c-fw-400">e</p> 
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="acos"
+    >
       <p class="fs-body c-text-primary c-fw-400">cos<sup>-1</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="e^x"
+    >
     <p class="fs-body c-text-primary c-fw-400">e<sup>x</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="x^3"
+    >
       <p class="fs-body c-text-primary c-fw-400">x<sup>3</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="x!"
+    >
       <p class="fs-body c-text-primary c-fw-400">x!</p>  
     </button>`,
   ],
 }
 const container5: Component = {
   col1: [
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="sinh"
+    >
       <p class="fs-body c-text-primary c-fw-400">sinh</p>   
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="tanh"
+    >
       <p class="fs-body c-text-primary c-fw-400">tanh</p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="acosh"
+    >
       <p class="fs-body c-text-primary c-fw-400">cosh<sup>-1</sup></p>
     </button>`,
   ],
   col2: [
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="cosh"
+    >
       <p class="fs-body c-text-primary c-fw-400">cosh</p> 
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="asinh"
+    >
       <p class="fs-body c-text-primary c-fw-400">sinh<sup>-1</sup></p>
     </button>`,
-    `<button class="button c-2 ripples button-animated">
+    `<button 
+      class="c-scientific button c-2 ripples button-animated"
+      data-value="atanh"
+    >
     <p class="fs-body c-text-primary c-fw-400">tanh<sup>-1</sup></p>
     </button>`,
   ],
@@ -380,6 +461,7 @@ export default (() => {
   const percentageButton = document.querySelector<HTMLButtonElement>('.c-percentage')!
   const equalsButton = document.querySelector<HTMLButtonElement>('.c-equals')!
   const operatorsButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-operator')!
+  const scientificButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-scientific')!
   toggleScientificCalc.addEventListener('click', ( { target }: any ) => {
     const container1 = document.querySelector<HTMLDivElement>('.container-1')!
     target.classList.toggle('scientific')
@@ -387,6 +469,23 @@ export default (() => {
   })
   radDeg.addEventListener('click', ( { target }: any ) => {
     target.classList.toggle('deg')
+    data.deg = !data.deg
+    if (data.deg) {
+      data.expression.forEach((item, index) => {
+        if (item.search(/rad/) > -1) {
+          data.expression[index] = data.expression[index].replace(/rad/gi, 'deg')
+        }
+      })
+    } else {
+      data.expression.forEach((item, index) => {
+        if (item.search(/deg/) > -1) {
+          data.expression[index] = data.expression[index].replace(/deg/gi, 'rad')
+        }
+      })
+    }
+    console.log(data.expression)
+    calculateValue()
+    format()
   })
   backspaceButton.addEventListener('click', backspace)
   allClearButton.addEventListener('click', allClear)
@@ -398,4 +497,5 @@ export default (() => {
   })
   numbers(numbersButtons)
   operators(operatorsButtons)
+  scientific(scientificButtons)
 })()

@@ -1,7 +1,5 @@
 $text-light: rgb(0, 0, 0);
 $text-dark: rgb(255, 255, 255);
-$bg-light: rgb(255, 255, 255);
-$bg-dark: rgb(40, 40, 40);
 $primary: rgb(153,  80, 173);
 $border: 0.1em solid rgba(0, 0, 0, 0.2);
 $active-bg: $primary;
@@ -21,28 +19,20 @@ $icon-color: #000000;
 $border-radius: 1em;
 @mixin theme-colors($light-theme: true) {
   @if $light-theme {
-    background-color: $bg-light;
-    color: $text-dark;
+    --bg-color: rgb(255, 255, 255);
     --bg-card: rgb(245, 245, 245);
     --bg-dropdown: rgb(245, 245, 245);
     --bg-navbar: rgb(235, 235, 235);
     --text-color: rgb(0, 0, 0);
     --text-primary: rgb(153,  80, 173);
     --ripple-color: rgba(0, 0, 0, 0.1);
-    & #app {
-      background-color: $bg-light;
-    }
   } @else {
-    background-color: $bg-dark;
-    color: $text-dark;
+    --bg-color: rgb(40, 40, 40);
     --bg-card: rgb(50, 50, 50);
     --bg-dropdown: rgb(50, 50, 50);
     --bg-navbar: rgb(60, 60, 60);
     --text-color: rgb(255, 255, 255);
     --text-primary: rgb(153,  80, 173);
     --ripple-color: rgba(255, 255, 255, 0.1);
-    & #app {
-      background-color: $bg-dark;
-    }
   }
 }

@@ -2,8 +2,8 @@ import { data } from './calculator'
 import format from './format'
 import calculateValue from './calculateValue'
 import utils from './utils'
+import alerts from './alerts'
 const isPiOrE = (last_position: any) => {
-  // const str = data.expression
   [last_position]
   const isPiOrEOnLastPosition = data.expression[last_position] === 'pi' ||
   data.expression[last_position] === 'e'
@@ -18,12 +18,12 @@ export default (buttons: HTMLButtonElement[]) => {
       const conditionOne = isNaN(Number(data.expression[last_position]))
       if (data.expression[last_position].length === 15 &&
         data.expression[last_position].search(/\./) === -1) {
-        // utils.alert('Não é possível inserir mais de 15 dígitos.')
+        alerts('Cannot enter more than 15 digits.')
       } else if (data.expression[last_position].length === 16 &&
         data.expression[last_position].search(/\./) > -1) {
-        // utils.alert('Não é possível inserir mais de 15 dígitos.')
+        alerts('Cannot enter more than 15 digits.')
       } else if (utils.tenDigitsDecimal(data.expression[last_position])) {
-        // utils.alert('jjsj')
+        alerts('Cannot enter more than 10 digits after the decimal point.')
       } else if(data.isResult && value === '0') {
         data.expression = ['0']
         data.expression_display = ['0']

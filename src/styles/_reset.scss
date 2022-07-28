@@ -11,6 +11,13 @@
   -ms-user-select: none;
 }
 
+:root {
+  @media (prefers-color-scheme: dark) {
+    @include theme-colors($light-theme: false);
+  }
+  @include theme-colors($light-theme: true);
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -22,17 +29,17 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   transition: background-color linear 200ms;
-  &.dark-mode {
-    @include theme-colors($light-theme: false);
-  }
-  @include theme-colors($light-theme: true);
   @media (max-height: 450px) {
     height: 100vh;
   }
   & #app {
     width: 100%;
     height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     @media (min-width: 900px) {
       max-width: 900px;
       max-height: 700px;

@@ -5,6 +5,7 @@ import operators from '../calculator/operators';
 import scientific from '../calculator/scientific';
 import calculateValue from '../calculator/calculateValue';
 import format from '../calculator/format';
+import Swiper, { Pagination } from 'swiper';
 type Component = {
   col1: string[];
   col2: string[];
@@ -451,6 +452,17 @@ const component = `
 export default (() => {
   const app = document.querySelector<HTMLDivElement>('#app')!
   app.innerHTML += component
+  new Swiper('.mySwiper', {
+    direction: 'vertical',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>'
+      },
+    },
+    modules: [Pagination],
+  })
   const toggleScientificCalc = document.querySelector<HTMLButtonElement>('.toggle-scientific-calc')!
   const radDeg = document.querySelector<HTMLButtonElement>('.rad-deg')!
   const numbersButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-number')!

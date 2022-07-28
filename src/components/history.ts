@@ -1,4 +1,3 @@
-import { expression } from "mathjs"
 import loadHistory from "../calculator/loadHistory"
 
 const component = `

@@ -1,7 +1,5 @@
-// @import "../node_modules/bootstrap/scss/bootstrap";
 @import './styles/_variables';
 @import "./styles/_typograph";
-// @import './styles/_colors';
 @import './styles/_reset';
 // COMPONENTS
 @import './styles/components/_history';
@@ -10,5 +8,4 @@
 @import './styles/components/_card';
 @import './styles/components/_navbar';
 @import './styles/components/_dropdown';
-@import './styles/components/_switch';
 @import './styles/components/_alerts';

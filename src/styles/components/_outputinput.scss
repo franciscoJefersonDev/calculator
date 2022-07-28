@@ -35,13 +35,19 @@
         -ms-user-select: auto;
         padding-right: 0.5em;
         &#input-result {
-          font-size: 1.5em;
+          font-size: 2.5em;
+          @media (orientation: landscape) {
+            font-size: 2em;
+          }
           @media (max-height: 450px) {
             display: none;
           }
         }
         &#input-expression {
-          font-size: 2em;
+          font-size: 3em;
+          @media (orientation: landscape) {
+            font-size: 2.5em;
+          }
           @media (max-height: 450px) {
             height: 100%;
           }

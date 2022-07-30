@@ -113,7 +113,7 @@ const container2: Component = {
       class="c-comma button c-2 ripples button-animated"
       data-value="."
     >
-      <p class="fs-body">.</p>
+      <p class="fs-body c-text-primary c-fw-400">.</p>
     </button>`,
   ],
   col2: [

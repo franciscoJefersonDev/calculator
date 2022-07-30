@@ -46,7 +46,7 @@ body {
     }
     margin: auto;
     display: grid;
-    grid-template-rows: 29% 70%;
+    grid-template-rows: 34% 65%;
     row-gap: 1%;
     grid-template-columns: 100%;
     align-items: center;
@@ -54,6 +54,7 @@ body {
     transition: background-color linear 200ms;
     @media (orientation: landscape) {
       grid-template-columns: 29% 69%;
+      grid-template-rows: 29% 70%;
       column-gap: 2%;
     }
     & input {

@@ -43,7 +43,7 @@ export default (buttons: HTMLButtonElement[]) => {
             data.expression_display.push('×')
           }
           data.expression.push('cbrt(')
-          data.expression_display.push('√(')
+          data.expression_display.push('cbrt(')
         }
       } else if (value === 'sin') {
         if (data.expression[0] === '') {

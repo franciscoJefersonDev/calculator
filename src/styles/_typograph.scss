@@ -1,7 +1,11 @@
 body {
-  font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-  & input, button, p, li, h6 {
-    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  & input,
+  button,
+  p,
+  li,
+  h6 {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
@@ -10,29 +14,32 @@ body {
 }
 .text-h1 {
   font-size: $text-h1;
-  font-weight: 900;
+  font-weight: 400;
 }
 .text-h2 {
   font-size: $text-h2;
-  font-weight: 900;
+  font-weight: 400;
 }
 .text-h3 {
   font-size: $text-h3;
-  font-weight: 900;
+  font-weight: 400;
 }
 .text-h4 {
   font-size: $text-h4;
-  font-weight: 900;
+  font-weight: 400;
 }
 .text-h5 {
   font-size: $text-h5;
-  font-weight: 900;
+  font-weight: 400;
 }
 .text-h6 {
   font-size: $text-h6;
-  font-weight: 900;
+  font-weight: 400;
 }
 // font-weight
+.c-fw-200 {
+  font-weight: 200;
+}
 .c-fw-400 {
   font-weight: 400;
 }

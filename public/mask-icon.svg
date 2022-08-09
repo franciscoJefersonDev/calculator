@@ -1,9 +1,10 @@
 <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="500" height="500" rx="50" fill="#9950AD"/>
-<path d="M125 50V87.5V125M125 125V162.5V200M125 125H87.5H50M125 125H162.5H200" stroke="white" stroke-width="40" stroke-linecap="round"/>
-<path d="M200 375H162.5H125H87.5H50" stroke="white" stroke-width="40" stroke-linecap="round"/>
-<ellipse cx="125" cy="318.75" rx="18.75" ry="18.75" fill="white"/>
-<ellipse cx="125" cy="431.25" rx="18.75" ry="18.75" fill="white"/>
-<path d="M450 125H412.5H375H337.5H300" stroke="white" stroke-width="40" stroke-linecap="round"/>
-<path d="M321.967 321.967L348.484 348.483L375 375M375 375L401.517 401.517L428.033 428.033M375 375L348.484 401.517L321.967 428.033M375 375L401.517 348.483L428.033 321.967" stroke="white" stroke-width="40" stroke-linecap="round"/>
+<rect width="500" height="500" rx="50" fill="#8338EC"/>
+<rect x="100" y="100" width="300" height="300" rx="50" fill="#8338EC"/>
+<path d="M175 130V152.5V175M175 175V197.5V220M175 175H152.5H130M175 175H197.5H220" stroke="white" stroke-width="30" stroke-linecap="round"/>
+<path d="M220 325H197.5H175H152.5H130" stroke="white" stroke-width="30" stroke-linecap="round"/>
+<ellipse cx="175" cy="291.25" rx="11.25" ry="11.25" fill="white"/>
+<ellipse cx="175" cy="358.75" rx="11.25" ry="11.25" fill="white"/>
+<path d="M370 175H347.5H325H302.5H280" stroke="white" stroke-width="30" stroke-linecap="round"/>
+<path d="M293.18 293.18L309.09 309.09L325 325M325 325L340.91 340.91L356.82 356.82M325 325L309.09 340.91L293.18 356.82M325 325L340.91 309.09L356.82 293.18" stroke="white" stroke-width="30" stroke-linecap="round"/>
 </svg>

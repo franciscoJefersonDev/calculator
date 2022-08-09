@@ -403,13 +403,8 @@ export default (buttons: HTMLButtonElement[]) => {
         }
       } else if (value === 'sinh') {
         if (data.expression[0] === '') {
-          if (!data.deg) {
-            data.expression[0] = 'sinh(rad'
+            data.expression[0] = 'sinh('
             data.expression_display[0] = 'sinh('
-          } else {
-            data.expression[0] = 'sinh(deg'
-            data.expression_display[0] = 'sinh('
-          }
         } else {
           const condition = !isNaN(Number(data.expression[last_position]))
           if (
@@ -421,23 +416,13 @@ export default (buttons: HTMLButtonElement[]) => {
             data.expression.push('*')
             data.expression_display.push('×')
           }
-          if (!data.deg) {
-            data.expression.push('sinh(rad')
+            data.expression.push('sinh(')
             data.expression_display.push('sinh(')
-          } else {
-            data.expression.push('sinh(deg')
-            data.expression_display.push('sinh(')
-          }
         }
       } else if (value === 'cosh') {
         if (data.expression[0] === '') {
-          if (!data.deg) {
-            data.expression[0] = 'cosh(rad'
+            data.expression[0] = 'cosh('
             data.expression_display[0] = 'cosh('
-          } else {
-            data.expression[0] = 'cosh(deg'
-            data.expression_display[0] = 'cosh('
-          }
         } else {
           const condition = !isNaN(Number(data.expression[last_position]))
           if (
@@ -449,23 +434,13 @@ export default (buttons: HTMLButtonElement[]) => {
             data.expression.push('*')
             data.expression_display.push('×')
           }
-          if (!data.deg) {
-            data.expression.push('cosh(rad')
+            data.expression.push('cosh(')
             data.expression_display.push('cosh(')
-          } else {
-            data.expression.push('cosh(deg')
-            data.expression_display.push('cosh(')
-          }
         }
       } else if (value === 'tanh') {
         if (data.expression[0] === '') {
-          if (!data.deg) {
-            data.expression[0] = 'tanh(rad'
+            data.expression[0] = 'tanh('
             data.expression_display[0] = 'tanh('
-          } else {
-            data.expression[0] = 'tanh(deg'
-            data.expression_display[0] = 'tanh('
-          }
         } else {
           const condition = !isNaN(Number(data.expression[last_position]))
           if (
@@ -477,13 +452,8 @@ export default (buttons: HTMLButtonElement[]) => {
             data.expression.push('*')
             data.expression_display.push('×')
           }
-          if (!data.deg) {
-            data.expression.push('tanh(rad')
+            data.expression.push('tanh(')
             data.expression_display.push('tanh(')
-          } else {
-            data.expression.push('tanh(deg')
-            data.expression_display.push('tanh(')
-          }
         }
       } else if (value === 'asinh') {
         if (data.expression[0] === '') {

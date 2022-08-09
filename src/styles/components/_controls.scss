@@ -192,7 +192,7 @@
           }
           & .swiper-pagination-bullet-active {
             color: rgb(255, 255, 255);
-            background: rgb(153,  80, 173);
+            background: $primary;
           }
         }
       }
@@ -230,7 +230,7 @@
         &.c-2 {
           background-color: var(--bg-card);
           &.equals {
-            background-color: rgb(153,  80, 173);
+            background-color: $primary;
             --rp-color: rgba(255, 255, 255, 0.1);
           }
         }

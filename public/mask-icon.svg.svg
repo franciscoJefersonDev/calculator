@@ -3,8 +3,8 @@
 <rect x="100" y="100" width="300" height="300" rx="50" fill="#8338EC"/>
 <path d="M175 130V152.5V175M175 175V197.5V220M175 175H152.5H130M175 175H197.5H220" stroke="white" stroke-width="30" stroke-linecap="round"/>
 <path d="M220 325H197.5H175H152.5H130" stroke="white" stroke-width="30" stroke-linecap="round"/>
-<ellipse cx="175" cy="291.25" rx="11.25" ry="11.25" fill="white"/>
-<ellipse cx="175" cy="358.75" rx="11.25" ry="11.25" fill="white"/>
+<ellipse cx="175" cy="282" rx="20" ry="20" fill="white"/>
+<ellipse cx="175" cy="367" rx="20" ry="20" fill="white"/>
 <path d="M370 175H347.5H325H302.5H280" stroke="white" stroke-width="30" stroke-linecap="round"/>
 <path d="M293.18 293.18L309.09 309.09L325 325M325 325L340.91 340.91L356.82 356.82M325 325L309.09 340.91L293.18 356.82M325 325L340.91 309.09L356.82 293.18" stroke="white" stroke-width="30" stroke-linecap="round"/>
 </svg>

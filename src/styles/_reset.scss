@@ -1,7 +1,7 @@
 * {
   margin: 0em;
   padding: 0em;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -12,10 +12,19 @@
 }
 
 :root {
+  --fs: 1.1em;
+
   @media (prefers-color-scheme: dark) {
     @include theme-colors($light-theme: false);
   }
+
   @include theme-colors($light-theme: true);
+}
+
+ion-icon {
+  font-size: calc(var(--fs) + 0.3em);
+  color: var(--text-color);
+  pointer-events: none;
 }
 
 body {
@@ -32,18 +41,22 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color linear 200ms;
+
   @media (max-height: 450px) {
     height: 100vh;
   }
+
   & #app {
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
     color: var(--text-color);
+
     @media (min-width: 900px) {
       max-width: 900px;
       max-height: 700px;
     }
+
     margin: auto;
     display: grid;
     grid-template-rows: 34% 65%;
@@ -52,11 +65,13 @@ body {
     align-items: center;
     justify-content: center;
     transition: background-color linear 200ms;
+
     @media (orientation: landscape) {
       grid-template-columns: 29% 69%;
       grid-template-rows: 29% 70%;
       column-gap: 2%;
     }
+
     & input {
       transition: color linear 200ms;
     }
@@ -71,10 +86,12 @@ svg {
   pointer-events: none;
   width: 18px;
   height: 18px;
-  & > * {
+
+  &>* {
     transition: fill linear 200ms, stroke linear 200ms;
   }
-  & > g path {
+
+  &>g path {
     transition: fill linear 200ms, stroke linear 200ms;
   }
 }

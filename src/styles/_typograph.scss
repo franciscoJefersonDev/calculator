@@ -1,48 +1,58 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
+
   & input,
   button,
   p,
   li,
   h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
 }
 
 .fs-body {
   font-size: $fs-body;
 }
+
 .text-h1 {
   font-size: $text-h1;
   font-weight: 400;
 }
+
 .text-h2 {
   font-size: $text-h2;
   font-weight: 400;
 }
+
 .text-h3 {
   font-size: $text-h3;
   font-weight: 400;
 }
+
 .text-h4 {
   font-size: $text-h4;
   font-weight: 400;
 }
+
 .text-h5 {
   font-size: $text-h5;
   font-weight: 400;
 }
+
 .text-h6 {
   font-size: $text-h6;
   font-weight: 400;
 }
+
 // font-weight
 .c-fw-200 {
   font-weight: 200;
 }
+
 .c-fw-400 {
   font-weight: 400;
 }
+
 .c-fw-600 {
   font-weight: 600;
 }
@@ -51,6 +61,19 @@ body {
 .text-color {
   color: var(--text-color);
 }
+
 .c-text-primary {
   color: $text-primary;
+}
+
+.text-primary {
+  color: rgb(var(--primary));
+}
+
+.text-light {
+  color: rgb(255, 255, 255);
+}
+
+.fs-3 {
+  font-size: 1.4em;
 }

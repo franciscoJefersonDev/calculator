@@ -3,13 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@popperjs/core': ^2.11.5
   '@types/bootstrap': ^5.1.12
-  '@types/uuid': ^8.3.4
   bootstrap: 5.2.0-beta1
   mathjs: ^11.0.0
   sass: 1.53.0
   swiper: ^8.3.1
   typescript: ^4.5.4
-  uuid: ^8.3.2
   vite: ^2.9.9
   vite-plugin-pwa: ^0.12.3
 
@@ -19,10 +17,8 @@ dependencies:
   bootstrap: 5.2.0-beta1_@popperjs+core@2.11.5
   mathjs: 11.0.0
   swiper: 8.3.1
-  uuid: 8.3.2
 
 devDependencies:
-  '@types/uuid': 8.3.4
   sass: 1.53.0
   typescript: 4.7.4
   vite: 2.9.14_sass@1.53.0
@@ -1337,10 +1333,6 @@ packages:
 
   /@types/trusted-types/2.0.2:
     resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
-    dev: true
-
-  /@types/uuid/8.3.4:
-    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
     dev: true
 
   /acorn/8.8.0:
@@ -2838,11 +2830,6 @@ packages:
     dependencies:
       punycode: 2.1.1
     dev: true
-
-  /uuid/8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
-    hasBin: true
-    dev: false
 
   /vite-plugin-pwa/0.12.3_vite@2.9.14:
     resolution: {integrity: sha512-gmYdIVXpmBuNjzbJFPZFzxWYrX4lHqwMAlOtjmXBbxApiHjx9QPXKQPJjSpeTeosLKvVbNcKSAAhfxMda0QVNQ==}

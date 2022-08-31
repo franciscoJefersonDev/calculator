@@ -17,6 +17,11 @@ $text-h6: 0.8em;
 $text-primary: rgb(131, 56, 236);
 $icon-color: #000000;
 $border-radius: 1em;
+
+:root {
+  --primary: 131, 56, 236;
+}
+
 @mixin theme-colors($light-theme: true) {
   @if $light-theme {
     --bg-color: rgb(255, 255, 255);
@@ -27,7 +32,9 @@ $border-radius: 1em;
     --text-primary: rgb(131, 56, 236);
     --ripple-color: rgba(0, 0, 0, 0.1);
     --bg-alert: rgb(215, 215, 215);
-  } @else {
+  }
+
+  @else {
     --bg-color: rgb(40, 40, 40);
     --bg-card: rgb(50, 50, 50);
     --bg-dropdown: rgb(50, 50, 50);

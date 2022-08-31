@@ -1,14 +1,16 @@
-import 'swiper/css'
-import 'swiper/css/pagination'
-import './style.scss'
-import './components/history'
-import './components/outputInput'
-import './components/controls'
-import './components/Dropdown'
-import './components/ButtonAnimated'
-import './components/Ripples'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import './style.scss';
+import './components/history';
+import './components/outputInput';
+import './components/controls';
+import './components/Dropdown';
+import './components/ButtonAnimated';
+import './components/Ripples';
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.screen.orientation.angle === 0) {
+  const heightScreen = window.innerHeight;
+  const widthScreen = window.innerWidth;
+  if (heightScreen > widthScreen) {
     document
       .querySelector<HTMLDivElement>('.controls')
       ?.classList.remove('none')
@@ -19,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ?.classList.remove('none')
     document.querySelector<HTMLDivElement>('.history')?.classList.remove('none')
   }
-  window.addEventListener('orientationchange', (event: any) => {
-    const angle: number = event.target.screen.orientation.angle
-    if (angle === 0) {
+  window.addEventListener('orientationchange', () => {
+    const heightScreen = window.innerHeight;
+    const widthScreen = window.innerWidth;
+    if (heightScreen < widthScreen) {
       document
         .querySelector<HTMLDivElement>('.controls')
         ?.classList.remove('none')

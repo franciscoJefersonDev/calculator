@@ -1,3 +1,4 @@
+import './keyword';
 const data = {
   expression: [''],
   expression_display: [''],
@@ -14,3 +15,7 @@ export {
   expression_display,
   display_result,
 }
+
+// document.addEventListener('DOMContentLoaded', () => {
+  
+// })

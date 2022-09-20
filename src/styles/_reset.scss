@@ -21,6 +21,12 @@
   @include theme-colors($light-theme: true);
 }
 
+.icon {
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+}
+
 ion-icon {
   font-size: calc(var(--fs) + 0.3em);
   color: var(--text-color);
@@ -87,11 +93,11 @@ svg {
   width: 18px;
   height: 18px;
 
-  &>* {
+  & > * {
     transition: fill linear 200ms, stroke linear 200ms;
   }
 
-  &>g path {
+  & > g path {
     transition: fill linear 200ms, stroke linear 200ms;
   }
 }

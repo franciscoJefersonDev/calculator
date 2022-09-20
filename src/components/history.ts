@@ -1,21 +1,29 @@
-import loadHistory from "../calculator/loadHistory"
+import loadHistory from '../calculator/loadHistory'
 
 const component = `
 <div class="card history">
   <div class="card-body">
     <nav class="navbar">
       <button class="toggle-history ripples navbar__button">
-        <svg width="450" height="275" viewBox="0 0 450 275" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M25 25L75 87.5L125 150L175 212.5V212.5C200.633 244.542 249.367 244.542 275 212.5V212.5L325 150L375 87.5L425 25" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>     
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="icon" 
+          viewBox="0 0 512 512"
+        >
+          <path fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/>
+        </svg>  
       </button>
       <h3 class="m-0 p-0 text-h3">History</h3>
       <div class="dropdown">
         <button class="dropdown__button ripples">
-          <svg width="130" height="499" viewBox="0 0 130 499" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="65" cy="65.0192" rx="65" ry="65.0192" fill="var(--text-color)"/>
-            <ellipse cx="65" cy="249.5" rx="65" ry="65.0192" fill="var(--text-color)"/>
-            <path d="M130 433.981C130 469.89 100.899 499 65 499C29.1015 499 0 469.89 0 433.981C0 398.072 29.1015 368.961 65 368.961C100.899 368.961 130 398.072 130 433.981Z" fill="var(--text-color)"/>
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="icon" 
+            viewBox="0 0 512 512"
+            >
+            <circle cx="256" cy="256" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
+            <circle cx="256" cy="416" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
+            <circle cx="256" cy="96" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
           </svg>
         </button>
         <ul 
@@ -36,8 +44,10 @@ export default (() => {
   const app = document.querySelector<HTMLDivElement>('#app')!
   app.innerHTML += component
   document.addEventListener('DOMContentLoaded', () => {
-    const toggleHistory = document.querySelectorAll<HTMLButtonElement>('.toggle-history')!
-    const clearHistory = document.querySelector<HTMLLIElement>('.clear-history')!
+    const toggleHistory =
+      document.querySelectorAll<HTMLButtonElement>('.toggle-history')!
+    const clearHistory =
+      document.querySelector<HTMLLIElement>('.clear-history')!
     toggleHistory.forEach((item: HTMLButtonElement) => {
       item.addEventListener('click', () => {
         setTimeout(() => {
@@ -54,10 +64,12 @@ export default (() => {
       let localStorageHistory: any = JSON.parse(
         localStorage.getItem('history') || `[{"expression": [], "display": []}]`
       )
-      localStorageHistory = [{
-        expression: [],
-        display: [],
-      }]
+      localStorageHistory = [
+        {
+          expression: [],
+          display: [],
+        },
+      ]
       localStorage.setItem('history', JSON.stringify(localStorageHistory))
       loadHistory()
     })

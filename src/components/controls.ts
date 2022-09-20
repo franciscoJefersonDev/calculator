@@ -1,14 +1,21 @@
 import { data } from '../calculator/calculator'
-import numbers from '../calculator/numbers';
-import { allClear, backspace, comma, equals, parentheses, percentage } from '../calculator/keys'
-import operators from '../calculator/operators';
-import scientific from '../calculator/scientific';
-import calculateValue from '../calculator/calculateValue';
-import format from '../calculator/format';
-import Swiper, { Pagination } from 'swiper';
+import numbers from '../calculator/numbers'
+import {
+  allClear,
+  backspace,
+  comma,
+  equals,
+  parentheses,
+  percentage,
+} from '../calculator/keys'
+import operators from '../calculator/operators'
+import scientific from '../calculator/scientific'
+import calculateValue from '../calculator/calculateValue'
+import format from '../calculator/format'
+import Swiper, { Pagination } from 'swiper'
 type Component = {
-  col1: string[];
-  col2: string[];
+  col1: string[]
+  col2: string[]
 }
 
 const container1: Component = {
@@ -80,7 +87,10 @@ const container1: Component = {
 const container2: Component = {
   col1: [
     `<button class="c-backspace button c-2 ripples button-animated">
-      <ion-icon name="backspace-outline" class="text-primary"></ion-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512">
+        <path d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z" fill="none" stroke="rgb(var(--primary-color))" stroke-linejoin="round" stroke-width="32"/>
+        <path fill="none" stroke="rgb(var(--primary-color))" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"/>
+      </svg>
     </button>`,
     `<button class="c-parentheses button c-2 ripples button-animated">
       <P class="text-primary fs-3">( )</P>
@@ -124,7 +134,12 @@ const container2: Component = {
       <p class="text-primary fs-3">&minus;</p> 
     </button>`,
     `<button class="c-equals button c-2 ripples button-animated equals">
-      <ion-icon name="reorder-two-outline" class="text-light fs-3"></ion-icon>   
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        class="icon" viewBox="0 0 512 512"
+      >
+        <path fill="none" stroke="rgb(255, 255, 255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 304h288M112 208h288"/>
+      </svg>
     </button>`,
   ],
 }
@@ -311,24 +326,40 @@ const component = `
   <div class="card-body">
     <nav class="navbar">
       <button class="toggle-history ripples navbar__button">
-        <svg width="425" height="455" viewBox="0 0 425 455" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M72.7497 337.137C92.6607 373.136 122.9 401.024 158.814 416.508C194.727 431.992 234.326 434.215 271.515 422.834C308.705 411.453 341.424 387.1 364.638 353.521C387.853 319.943 400.276 279 399.995 236.993C399.715 194.987 386.747 154.244 363.087 121.035C339.427 87.8265 306.386 63.9917 269.049 53.1989C231.712 42.406 192.147 45.2532 156.444 61.3022C120.74 77.3511 90.8764 105.713 71.4479 142.022" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round"/>
-          <path d="M256.258 293.312L245.991 280.734L235.724 268.155L225.457 255.576L223.143 252.742C217.999 246.44 215.189 238.554 215.189 230.419V230.419V217.841V205.262V192.683V180.105V167.526" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M58.9631 30L54.6576 67.4285L50.3521 104.857L46.0466 142.285V142.285C43.9991 160.085 54.9445 175.517 66.917 171.712V171.712M142.445 147.708L117.269 155.709M117.269 155.709L92.093 163.711L66.917 171.712M117.269 155.709L66.917 171.712" stroke="var(--text-color)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="icon" 
+          viewBox="0 0 512 512"
+        >
+          <path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 128v144h96"/>
         </svg>
       </button>
       <button class="toggle-scientific-calc ripples navbar__button">
-      <svg class="scientific-icon" width="327" height="440" viewBox="0 0 327 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M307 120V86.6667C307 49.8477 277.152 20 240.333 20V20H173.667H107C107 20 107 20 107 20C107 20 78.6495 20 54.1374 20C45.2969 20 36.8214 23.5119 30.5702 29.7631V29.7631C17.5527 42.7806 17.5528 63.8861 30.5702 76.9036L73.6667 120L140.333 186.667V186.667C158.743 205.076 158.743 234.924 140.333 253.333V253.333L107 286.667L73.6667 320L40.3333 353.333L30.5702 363.096C17.5527 376.114 17.5527 397.219 30.5702 410.237V410.237C36.8214 416.488 45.2999 420 54.1405 420H107H240.333V420C277.152 420 307 390.152 307 353.333V320" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        class="icon scientific-icon" 
+        viewBox="0 0 512 512"
+        >
+        <path d="M436.67 184.11a27.17 27.17 0 01-38.3 0l-22.48-22.49a27.15 27.15 0 010-38.29l50.89-50.89a.85.85 0 00-.26-1.38C393.68 57 351.09 64.15 324.05 91c-25.88 25.69-27.35 64.27-17.87 98a27 27 0 01-7.67 27.14l-173 160.76a40.76 40.76 0 1057.57 57.54l162.15-173.3a27 27 0 0126.77-7.7c33.46 8.94 71.49 7.26 97.07-17.94 27.49-27.08 33.42-74.94 20.1-102.33a.85.85 0 00-1.36-.22z" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/>
+        <path d="M224 284c-17.48-17-25.49-24.91-31-30.29a18.24 18.24 0 01-3.33-21.35 20.76 20.76 0 013.5-4.62l15.68-15.29a18.66 18.66 0 015.63-3.87 18.11 18.11 0 0120 3.62c5.45 5.29 15.43 15 33.41 32.52M317.07 291.3c40.95 38.1 90.62 83.27 110 99.41a13.46 13.46 0 01.94 19.92L394.63 444a14 14 0 01-20.29-.76c-16.53-19.18-61.09-67.11-99.27-107" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+        <path d="M17.34 193.5l29.41-28.74a4.71 4.71 0 013.41-1.35 4.85 4.85 0 013.41 1.35h0a9.86 9.86 0 008.19 2.77c3.83-.42 7.92-1.6 10.57-4.12 6-5.8-.94-17.23 4.34-24.54a207 207 0 0119.78-22.6c6-5.88 29.84-28.32 69.9-44.45A107.31 107.31 0 01206.67 64c22.59 0 40 10 46.26 15.67a89.54 89.54 0 0110.28 11.64 78.92 78.92 0 00-9.21-2.77 68.82 68.82 0 00-20-1.26c-13.33 1.09-29.41 7.26-38 14-13.9 11-19.87 25.72-20.81 44.71-.68 14.12 2.72 22.1 36.1 55.49a6.6 6.6 0 01-.34 9.16l-18.22 18a6.88 6.88 0 01-9.54.09c-21.94-21.94-36.65-33.09-45-38.16s-15.07-6.5-18.3-6.85a30.85 30.85 0 00-18.27 3.87 11.39 11.39 0 00-2.64 2 14.14 14.14 0 00.42 20.08l1.71 1.6a4.63 4.63 0 010 6.64L71.73 246.6a4.71 4.71 0 01-3.41 1.4 4.86 4.86 0 01-3.41-1.35l-47.57-46.43a4.88 4.88 0 010-6.72z" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
       </svg>
-      <svg class="calc-basic-icon" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M95.0691 20V59.3825V98.765M95.0691 98.765V138.147V177.53M95.0691 98.765H57.5345H20M95.0691 98.765H132.604H170.138" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
-        <path d="M260.754 252.914L287.295 280.762L313.836 308.609M313.836 308.609L340.377 336.457L366.918 364.305M313.836 308.609L287.295 336.457L260.754 364.305M313.836 308.609L340.377 280.762L366.918 252.914" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
-        <path d="M395.345 98.765H357.811H320.276H282.742H245.207" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
-        <path d="M170.138 315.369H132.604H95.0691H57.5345H20" stroke="var(--text-color)" stroke-width="40" stroke-linecap="round"/>
-        <ellipse cx="95.069" cy="256.295" rx="18.7673" ry="19.6912" fill="var(--text-color)"/>
-        <ellipse cx="95.069" cy="374.442" rx="18.7673" ry="19.6912" fill="var(--text-color)"/>
-      </svg>   
+      <svg xmlns="http://www.w3.org/2000/svg" 
+        class="icon calc-basic-icon" 
+        viewBox="0 0 512 512"
+      >
+        <rect x="112" y="48" width="288" height="416" rx="32" ry="32" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+        <path fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M160.01 112H352v64H160.01z"/>
+        <circle cx="168" cy="248" r="24" fill="var(--text-color)"/>
+        <circle cx="256" cy="248" r="24" fill="var(--text-color)"/>
+        <circle cx="344" cy="248" r="24" fill="var(--text-color)"/>
+        <circle cx="168" cy="328" r="24" fill="var(--text-color)"/>
+        <circle cx="256" cy="328" r="24" fill="var(--text-color)"/>
+        <circle cx="168" cy="408" r="24" fill="var(--text-color)"/>
+        <circle cx="256" cy="408" r="24" fill="var(--text-color)"/>
+        <rect x="320" y="304" width="48" height="128" rx="24" ry="24" fill="var(--text-color)"/>
+      </svg>
+      
       </button>
       <button class="rad-deg ripples navbar__button">
         <p class="text-rad">Rad</p>
@@ -438,17 +469,26 @@ export default (() => {
     },
     modules: [Pagination],
   })
-  const toggleScientificCalc = document.querySelector<HTMLButtonElement>('.toggle-scientific-calc')!
+  const toggleScientificCalc = document.querySelector<HTMLButtonElement>(
+    '.toggle-scientific-calc'
+  )!
   const radDeg = document.querySelector<HTMLButtonElement>('.rad-deg')!
-  const numbersButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-number')!
-  const backspaceButton = document.querySelector<HTMLButtonElement>('.c-backspace')!
-  const allClearButton = document.querySelector<HTMLButtonElement>('.c-all-clear')!
+  const numbersButtons: any =
+    document.querySelectorAll<HTMLButtonElement>('.c-number')!
+  const backspaceButton =
+    document.querySelector<HTMLButtonElement>('.c-backspace')!
+  const allClearButton =
+    document.querySelector<HTMLButtonElement>('.c-all-clear')!
   const commaButton = document.querySelector<HTMLButtonElement>('.c-comma')!
-  const parenthesesButton = document.querySelector<HTMLButtonElement>('.c-parentheses')!
-  const percentageButton = document.querySelector<HTMLButtonElement>('.c-percentage')!
+  const parenthesesButton =
+    document.querySelector<HTMLButtonElement>('.c-parentheses')!
+  const percentageButton =
+    document.querySelector<HTMLButtonElement>('.c-percentage')!
   const equalsButton = document.querySelector<HTMLButtonElement>('.c-equals')!
-  const operatorsButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-operator')!
-  const scientificButtons: any = document.querySelectorAll<HTMLButtonElement>('.c-scientific')!
+  const operatorsButtons: any =
+    document.querySelectorAll<HTMLButtonElement>('.c-operator')!
+  const scientificButtons: any =
+    document.querySelectorAll<HTMLButtonElement>('.c-scientific')!
   toggleScientificCalc.addEventListener('click', ({ target }: any) => {
     const container1 = document.querySelector<HTMLDivElement>('.container-1')!
     target.classList.toggle('scientific')
@@ -460,13 +500,19 @@ export default (() => {
     if (data.deg) {
       data.expression.forEach((item, index) => {
         if (item.search(/rad/) > -1) {
-          data.expression[index] = data.expression[index].replace(/rad/gi, 'deg')
+          data.expression[index] = data.expression[index].replace(
+            /rad/gi,
+            'deg'
+          )
         }
       })
     } else {
       data.expression.forEach((item, index) => {
         if (item.search(/deg/) > -1) {
-          data.expression[index] = data.expression[index].replace(/deg/gi, 'rad')
+          data.expression[index] = data.expression[index].replace(
+            /deg/gi,
+            'rad'
+          )
         }
       })
     }

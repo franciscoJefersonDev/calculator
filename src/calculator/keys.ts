@@ -1,6 +1,4 @@
-import {
-  data
-} from './calculator'
+import { data } from './calculator'
 import format from './format'
 import calculateValue from './calculateValue'
 import loadHistory from './loadHistory'
@@ -117,21 +115,30 @@ const comma = () => {
 }
 
 const equals = () => {
-  const inputExpression = document.querySelector<HTMLInputElement>('.input-expression')!
+  const inputExpression =
+    document.querySelector<HTMLInputElement>('.input-expression')!
   const localStorageHistory: any = JSON.parse(
     localStorage.getItem('history') || `[{"expression": [], "display": []}]`
   )
-  if(data.expression.length > 0 && data.expression[0] !== '') {
+ 
+  if (data.expression.toString() === data.result) {
+    return
+  }
+  if (data.expression.length > 0 && data.expression[0] !== '') {
     const newHistory = {
       expression: data.expression,
       display: data.expression_display,
     }
-    if(localStorageHistory.filter((item: any) => JSON.stringify(item) === JSON.stringify(newHistory)).length === 0) {
+    if (
+      localStorageHistory.filter(
+        (item: any) => JSON.stringify(item) === JSON.stringify(newHistory)
+      ).length === 0
+    ) {
       localStorageHistory.push(newHistory)
       localStorage.setItem('history', JSON.stringify(localStorageHistory))
     }
   }
-  if(Number(data.result) < 0) {
+  if (Number(data.result) < 0) {
     data.expression_display = ['-', Math.abs(Number(data.result)).toString()]
     data.expression = ['-', Math.abs(Number(data.result)).toString()]
   } else {

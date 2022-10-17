@@ -5,26 +5,18 @@ const component = `
   <div class="card-body">
     <nav class="navbar">
       <button class="toggle-history ripples navbar__button">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          class="icon" 
-          viewBox="0 0 512 512"
-        >
-          <path fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/>
-        </svg>  
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512">
+          <path fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144" />
+        </svg>
       </button>
       <h3 class="m-0 p-0 text-h3">History</h3>
       <div class="dropdown">
         <button class="dropdown__button ripples">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            class="icon" 
-            viewBox="0 0 512 512"
-            >
-            <circle cx="256" cy="256" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
-            <circle cx="256" cy="416" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
-            <circle cx="256" cy="96" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512">
+          <circle fill="var(--text-color)" cx="256" cy="256" r="48" />
+          <circle fill="var(--text-color)" cx="256" cy="416" r="48" />
+          <circle fill="var(--text-color)" cx="256" cy="96" r="48" />
+        </svg>
         </button>
         <ul 
           class="dropdown__menu shadow"

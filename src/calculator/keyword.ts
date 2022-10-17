@@ -7,8 +7,9 @@ import loadHistory from './loadHistory'
 const operators_symbols = /\+|\-|\*|\//
 
 const isPiOrE = (last_position: any) => {
-  [last_position]
-  const isPiOrEOnLastPosition = data.expression[last_position] === 'pi' ||
+  ;[last_position]
+  const isPiOrEOnLastPosition =
+    data.expression[last_position] === 'pi' ||
     data.expression[last_position] === 'e'
   return isPiOrEOnLastPosition
 }
@@ -75,23 +76,30 @@ const dot = () => {
 
 const numbers = (keys: string) => {
   const value: string = keys
-  const last_position = data.expression.length - 1 < 0 ? 0 :
-    data.expression.length - 1
+  const last_position =
+    data.expression.length - 1 < 0 ? 0 : data.expression.length - 1
   const conditionOne = isNaN(Number(data.expression[last_position]))
-  if (data.expression[last_position].length === 15 &&
-    data.expression[last_position].search(/\./) === -1) {
-    alerts('Cannot enter more than 15 digits.')
-  } else if (data.expression[last_position].length === 16 &&
-    data.expression[last_position].search(/\./) > -1) {
-    alerts('Cannot enter more than 15 digits.')
+  if (
+    data.expression[last_position].length === 15 &&
+    data.expression[last_position].search(/\./) === -1
+  ) {
+    alerts('Não é possível inserir mais de 15 dígitos.')
+  } else if (
+    data.expression[last_position].length === 16 &&
+    data.expression[last_position].search(/\./) > -1
+  ) {
+    alerts('Não é possível inserir mais de 15 dígitos.')
   } else if (utils.tenDigitsDecimal(data.expression[last_position])) {
-    alerts('Cannot enter more than 10 digits after the decimal point.')
+    alerts('Não é possível inserir mais de 10 dígitos depois do ponto decimal.')
   } else if (data.isResult && value === '0') {
     data.expression = ['0']
     data.expression_display = ['0']
-  }
-  else if (conditionOne && data.expression[last_position]
-    .search(utils.percentage_parentheses_end) > -1 || isPiOrE(last_position)) {
+  } else if (
+    (conditionOne &&
+      data.expression[last_position].search(utils.percentage_parentheses_end) >
+        -1) ||
+    isPiOrE(last_position)
+  ) {
     data.expression.push('*')
     data.expression.push(value)
     data.expression_display.push('×')
@@ -222,9 +230,9 @@ const operator = (key: string) => {
   format()
 }
 
-
 const equal = () => {
-  const inputExpression = document.querySelector<HTMLInputElement>('.input-expression')!
+  const inputExpression =
+    document.querySelector<HTMLInputElement>('.input-expression')!
   const localStorageHistory: any = JSON.parse(
     localStorage.getItem('history') || `[{"expression": [], "display": []}]`
   )
@@ -233,7 +241,11 @@ const equal = () => {
       expression: data.expression,
       display: data.expression_display,
     }
-    if (localStorageHistory.filter((item: any) => JSON.stringify(item) === JSON.stringify(newHistory)).length === 0) {
+    if (
+      localStorageHistory.filter(
+        (item: any) => JSON.stringify(item) === JSON.stringify(newHistory)
+      ).length === 0
+    ) {
       localStorageHistory.push(newHistory)
       localStorage.setItem('history', JSON.stringify(localStorageHistory))
     }
@@ -252,15 +264,17 @@ const equal = () => {
 }
 
 export default document.addEventListener('keydown', (event: any) => {
-  const keyName = event.key;
-  const expressionDisplayInput = document.querySelector<HTMLInputElement>('.expression-display');
+  const keyName = event.key
+  const expressionDisplayInput = document.querySelector<HTMLInputElement>(
+    '.expression-display'
+  )
   console.log(keyName)
   console.log(expressionDisplayInput?.scrollLeft)
   expressionDisplayInput?.scrollBy({
     top: 0,
     left: window.innerHeight,
-    behavior: 'smooth'
-  });
+    behavior: 'smooth',
+  })
   if (Number(keyName) || keyName === '0') {
     numbers(keyName)
   } else if (keyName === 'Backspace') {
@@ -273,7 +287,12 @@ export default document.addEventListener('keydown', (event: any) => {
     allClear()
   } else if (keyName === '%') {
     percentage()
-  } else if (keyName === '/' || keyName === '*' || keyName === '+' || keyName === '-') {
+  } else if (
+    keyName === '/' ||
+    keyName === '*' ||
+    keyName === '+' ||
+    keyName === '-'
+  ) {
     operator(keyName)
   } else if (keyName === 'Enter') {
     equal()
